@@ -11,8 +11,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mirae?serverTimezone=Asia/Seoul
-    username: root
-    password: rootroot
+    username: mirae
+    password: mirae1234
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
