@@ -24,8 +24,7 @@ public class SecurityConfig {
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/")
                 .and()
-                .oauth2Login()
-                .
+                .oauth2Login();
         return http.build();
     }
 }
