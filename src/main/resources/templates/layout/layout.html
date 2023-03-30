@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- page css 공통 영역 -->
+  <!-- page css 설정 영역 -->
+  <th:block layout:fragment="css"></th:block>
+
+  <!-- page 자바스크립트 공통 영역 -->
+  <!-- page 자바스크립트 설정 영역 -->
+  <th:block layout:fragment="script"></th:block>
+</head>
+<body>
+  <!-- <nav th:replace=" :: NavbarFragment"></nav> -->
+  <th:block layout:fragment="Content"></th:block>
+  <footer th:replace="layout/footer  :: footerFragment"></footer>
+</body>
+</html>
