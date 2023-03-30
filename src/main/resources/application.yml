@@ -15,7 +15,7 @@ spring:
     password: mirae1234
   mvc:
     pathmatch:
-      matching-strategy: ant_path_matcher
+      matching-straㅎtegy: ant_path_matcher
     view:
       prefix: /template/
       suffix: ./mustache

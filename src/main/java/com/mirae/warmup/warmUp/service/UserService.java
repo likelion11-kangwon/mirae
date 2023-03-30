@@ -5,5 +5,5 @@ import com.mirae.warmup.warmUp.entity.User;
 
 public interface UserService {
     public UserDto getUser(String name);
-    public UserDto saveUser(UserDto userDto);
+    public void saveUser(UserDto userDto);
 }
