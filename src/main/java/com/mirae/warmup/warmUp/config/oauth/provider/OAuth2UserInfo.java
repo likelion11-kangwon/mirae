@@ -1,5 +1,7 @@
 package com.mirae.warmup.warmUp.config.oauth.provider;
 
+import java.util.Map;
+
 public interface OAuth2UserInfo {
     public String getProviderId();
 
@@ -9,4 +11,5 @@ public interface OAuth2UserInfo {
 
     public String getName();
 
+    public Map<String, Object> getAttributes();
 }

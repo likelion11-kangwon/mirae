@@ -23,7 +23,7 @@ import java.util.Map;
 public class PrincipalOAuth2UserService extends DefaultOAuth2UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -61,7 +61,8 @@ public class PrincipalOAuth2UserService extends DefaultOAuth2UserService {
         String password = bCryptPasswordEncoder.encode("미래씨");
         String email = oAuth2UserInfo.getEmail();
         String role = "ROLE_USER";
-        User userEntity = userRepository.findByUsername(username);
+
+        User userEntity = userService.getUserEntity(username);
 
         if(userEntity == null){
             System.out.println("OAuth 로그인이 최초입니다.");
@@ -73,12 +74,12 @@ public class PrincipalOAuth2UserService extends DefaultOAuth2UserService {
                     .provider(provider)
                     .providerId(providerId)
                     .build();
-            userRepository.save(userEntity);
+            userService.saveUserEntity(userEntity);
         }
         else{
             System.out.println("이미 아이디가 있습니다.");
         }
 
-        return new PrincipalDetails(userEntity);
+        return new PrincipalDetails(userEntity, oAuth2UserInfo.getAttributes());
     }
 }

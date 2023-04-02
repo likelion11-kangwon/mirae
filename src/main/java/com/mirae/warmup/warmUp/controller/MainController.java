@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/mirae")
 public class MainController {
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -58,16 +58,13 @@ public class MainController {
     }
 
     @PostMapping("/join")
-    public String join(User user){
-        System.out.println(user);
+    public String join(UserDto userDto){
+        System.out.println(userDto);
 
-        user.setRole("ROLE_USER");
-
-        String rawPassword = user.getPassword();
-        String encPassword = bCryptPasswordEncoder.encode(rawPassword);
-
-        user.setPassword(encPassword);
-        userRepository.save(user);
+        if(userService.getUserDto(userDto.getUsername()) == null) {
+            userService.saveUserDto(userDto);
+            System.out.println("success");
+        }
 
         return "redirect:/mirae/loginForm";
     }

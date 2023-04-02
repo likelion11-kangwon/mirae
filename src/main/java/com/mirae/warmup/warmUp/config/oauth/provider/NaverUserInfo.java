@@ -1,5 +1,7 @@
 package com.mirae.warmup.warmUp.config.oauth.provider;
 
+import lombok.Getter;
+
 import java.util.Map;
 
 public class NaverUserInfo implements OAuth2UserInfo{
@@ -27,5 +29,10 @@ public class NaverUserInfo implements OAuth2UserInfo{
     @Override
     public String getName() {
         return (String)attributes.get("name");
+    }
+
+    @Override
+    public Map<String, Object> getAttributes() {
+        return attributes;
     }
 }

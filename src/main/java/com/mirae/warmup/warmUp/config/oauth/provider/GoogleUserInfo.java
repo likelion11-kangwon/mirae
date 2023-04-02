@@ -1,6 +1,9 @@
 package com.mirae.warmup.warmUp.config.oauth.provider;
 
+import lombok.Getter;
+
 import java.util.Map;
+
 public class GoogleUserInfo implements OAuth2UserInfo{
 
     private Map<String, Object> attributes;
@@ -29,4 +32,8 @@ public class GoogleUserInfo implements OAuth2UserInfo{
         return (String)attributes.get("name");
     }
 
+    @Override
+    public Map<String, Object> getAttributes() {
+        return attributes;
+    }
 }
