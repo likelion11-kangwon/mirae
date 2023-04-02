@@ -28,6 +28,8 @@ dependencies {
     implementation("io.springfox:springfox-swagger2:2.9.2")
     implementation("io.springfox:springfox-swagger-ui:2.9.2")
 
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.mysql:mysql-connector-j")
