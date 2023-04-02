@@ -17,22 +17,33 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto getUser(String name) {
-        User userEntity = userRepository.findByUsername(name);
-        UserDto userDto = UserDto.builder()
-                .username(userEntity.getUsername())
-                .password(userEntity.getPassword())
-                .email(userEntity.getEmail())
-                .role(userEntity.getRole())
-                .provider(userEntity.getProvider())
-                .providerId(userEntity.getProviderId())
-                .age(userEntity.getAge())
-                .build();
-        return userDto;
+    public UserDto getUserDto(String username) {
+        User userEntity = userRepository.findByUsername(username);
+
+        if(userEntity != null){
+            UserDto userDto = UserDto.builder()
+                    .username(userEntity.getUsername())
+                    .password(userEntity.getPassword())
+                    .email(userEntity.getEmail())
+                    .role(userEntity.getRole())
+                    .provider(userEntity.getProvider())
+                    .providerId(userEntity.getProviderId())
+                    .age(userEntity.getAge())
+                    .build();
+            return userDto;
+        }
+        else{
+            return null;
+        }
     }
 
     @Override
-    public void saveUser(UserDto userDto) {
+    public User getUserEntity(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public void saveUserDto(UserDto userDto) {
         User user = User.builder()
                 .username(userDto.getUsername())
                 .email(userDto.getEmail())
@@ -44,11 +55,16 @@ public class UserServiceImpl implements UserService {
                 .build();
 
         String rawPassword = userDto.getPassword();
-        String newPasswrod = bCryptPasswordEncoder.encode(rawPassword);
+        String encPasswrod = bCryptPasswordEncoder.encode(rawPassword);
 
-        user.setPassword(newPasswrod);
+        user.setPassword(encPasswrod);
         user.setRole("ROLE_USER");
 
+        userRepository.save(user);
+    }
+
+    @Override
+    public void saveUserEntity(User user) {
         userRepository.save(user);
     }
 }
