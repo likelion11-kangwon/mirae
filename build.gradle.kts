@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+    // implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.20")
+    // ㅂㄷㅂㄷ
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-mustache")
     implementation("org.springframework.boot:spring-boot-starter-security")
@@ -29,6 +31,7 @@ dependencies {
     implementation("io.springfox:springfox-swagger-ui:2.9.2")
 
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation ("com.google.code.gson:gson:2.10.1")
 
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
