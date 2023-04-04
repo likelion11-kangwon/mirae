@@ -33,6 +33,7 @@ public class SecurityConfig {
                 .loginPage("/mirae/loginForm")
                 .userInfoEndpoint()
                 .userService(principalOAuth2UserService);
+
         return http.build();
     }
 }
