@@ -26,7 +26,7 @@ public class MainController {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @GetMapping({"home", "/"})
+    @GetMapping({"home", ""})
     public String home(){
         return "index";
     }
