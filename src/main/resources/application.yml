@@ -19,10 +19,7 @@ spring:
     view:
       prefix: /template/
       suffix: ./mustache
-    throw-exception-if-no-handler-found: true
-  web:
-    resources:
-      add-mappings: false
+
 
   jpa:
     hibernate:
