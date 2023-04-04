@@ -21,6 +21,7 @@ public class MemberController {
 
     @GetMapping({"/team/yong_hyun"})
     public String home(){
+
         return "team/yong_hyun";
     }
 }
