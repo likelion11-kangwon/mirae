@@ -1,6 +1,6 @@
 package com.mirae.warmup.warmUp.dto;
 
-public class GithubOrganzationUserDto {
+public class GithubOrganizationUserDto {
     public String login;
     public int id;
     public String node_id;

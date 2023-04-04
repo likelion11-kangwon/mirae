@@ -2,9 +2,8 @@ package com.mirae.warmup.warmUp.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
 import com.mirae.warmup.warmUp.dto.ContributionsCollectionDto;
-import com.mirae.warmup.warmUp.dto.GithubOrganzationUserDto;
+import com.mirae.warmup.warmUp.dto.GithubOrganizationUserDto;
 import com.mirae.warmup.warmUp.dto.GithubUserDto;
 import okhttp3.*;
 import org.springframework.core.env.Environment;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.io.StringReader;
 import java.lang.reflect.Type;
 import java.util.*;
 
@@ -41,15 +39,15 @@ public class ApiController {
                 .url("https://api.github.com/orgs/likelion11-kangwon/members")
                 .addHeader("Authorization", String.format("Bearer %s", githubToken))
                 .build();
-        Type listOfGithubOrganzationUser = new TypeToken<ArrayList<GithubOrganzationUserDto>>() {}.getType();
-        ArrayList<GithubOrganzationUserDto> organzationMember;
+        Type listOfGithubOrganzationUser = new TypeToken<ArrayList<GithubOrganizationUserDto>>() {}.getType();
+        ArrayList<GithubOrganizationUserDto> organzationMember;
         try (Response response = client.newCall(request1).execute()){
             organzationMember = gson.fromJson(Objects.requireNonNull(response.body()).string(), listOfGithubOrganzationUser);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        for (GithubOrganzationUserDto member : organzationMember) {
+        for (GithubOrganizationUserDto member : organzationMember) {
             Map<String, Object> data = new HashMap<>();
             data.put("login", member.login);
             data.put("avatar", member.avatar_url);
