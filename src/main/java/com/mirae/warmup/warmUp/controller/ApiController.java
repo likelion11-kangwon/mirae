@@ -41,7 +41,7 @@ public class ApiController {
         OkHttpClient client = new OkHttpClient();
         Request request1 = new Request.Builder()
                 .url("https://api.github.com/orgs/likelion11-kangwon/members")
-                .addHeader("Authorization", String.format("Bearer %s", githubToken))
+                // .addHeader("Authorization", String.format("Bearer %s", githubToken))
                 .build();
         Type listOfGithubOrganzationUser = new TypeToken<ArrayList<GithubOrganzationUserDto>>() {}.getType();
         ArrayList<GithubOrganzationUserDto> organzationMember;

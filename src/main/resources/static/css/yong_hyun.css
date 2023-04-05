@@ -1,3 +1,18 @@
+@font-face{
+    font-family: "Jalnan";
+    src: url("../font/Jalnan.ttf");
+}
+
+@font-face{
+    font-family: "NotoSansKR-Bold";
+    src: url("../font/NotoSansKR/NotoSansKR-Bold.otf");
+}
+
+@font-face{
+    font-family: "NotoSansKR-Medium";
+    src: url("../font/NotoSansKR/NotoSansKR-Medium.otf");
+}
+
 body {
     background: #1e2125;
     color: white;
@@ -18,7 +33,7 @@ section.main_section {
 section.main_section div.main_group {
     text-align: center;
     position: absolute;
-    top: 35%;
+    top: 30%;
     width: 100%;
     place-items: center;
 
@@ -29,8 +44,9 @@ section.main_section div.main_group {
 }
 
 section.main_section div.main_group span.main_title {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 1000;
+    font-family: Jalnan, "Jalnan", sans-serif;
 }
 
 section.main_section div.main_group span.main_title span.main_title_emphasis {
@@ -72,7 +88,7 @@ section.main_section div.firework::after {
     --x: -50%;
     --initialY: 60vmin;
     content: "";
-    animation: firework 2s infinite;
+    animation: firework 3s infinite;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -279,4 +295,86 @@ section.main_section div.commit_rank_group div.github_content_group span.github_
 section.main_section div.commit_rank_group div.github_content_group span.github_rank {
     font-size: 30px;
     color: gray;
+}
+
+section.introduce_section {
+    background: #373b3e;
+    min-height: 60vh;
+}
+
+section.introduce_section div.introduce_group span {
+    display: inline-block;
+    font-size: 16px;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+}
+
+section.introduce_section div.introduce_group h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+}
+
+section.introduce_section div.introduce_group {
+    padding: calc((60vh - 203px) / 2) 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.introduce_section div.introduce_group img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+@media screen and (max-width: 1050px) {
+    section.introduce_section div.introduce_group img {
+        display: none;
+    }
+}
+
+section.programing_section {
+    min-height: 60vh;
+}
+
+section.programing_section div.programing_group {
+    padding: calc((60vh - 203px) / 2) 0;
+    text-align: center;
+}
+
+section.programing_section div.programing_group h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+section.programing_section div.programing_group span {
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+
+section.programing_section div.programing_group div.image_group {
+    padding: 50px 0 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+section.programing_section div.programing_group div.image_group img.background {
+    background: white;
+    padding: 15px;
+}
+section.programing_section div.programing_group div.image_group img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: 0 10px;
+    animation: image_index 20s infinite linear;
+}
+
+
+@keyframes image_index {
+    0% { transform: translate(0%, 0) }
+    100% { transform: translate(calc((-170px * 14)), 0) }
 }

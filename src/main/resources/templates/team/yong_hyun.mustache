@@ -14,26 +14,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 
+    <script src="https://kit.fontawesome.com/afc467762e.js" crossorigin="anonymous"></script>
+
     <!-- Personal Javascript -->
     <script src="/static/javascript/autoscroll.js"></script>
 
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-    <section id="main" class="main_section">
-        <div class="main_group">
+<section id="main" class="main_section">
+    <div class="main_group">
             <span class="main_title">
                 오늘도 <span class="main_title_emphasis">즐코</span>하세요!
             </span>
 
-            <div class="commit_rank_group">
-                <span class="commit_rank_description">저는 멤버분들이 열심히 즐코시는지 구경하고 있습니다.</span>
-                <!-- Rank Sample (🥇🥈🥉) -->
-                <div class="commit_rank_content">
-                    <div class="commit_rank_text">
-                        <div id="spinnerIndicator"></div>
-                        <span>Loading</span>
-                    </div> <!--
+        <div class="commit_rank_group">
+            <span class="commit_rank_description">저는 멤버분들이 열심히 즐코시는지 구경하고 있습니다.</span>
+            <!-- Rank Sample (🥇🥈🥉) -->
+            <div class="commit_rank_content">
+                <div class="commit_rank_text">
+                    <div id="spinnerIndicator"></div>
+                    <span>Loading</span>
+                </div> <!--
                     <div class="github_content_group">
                         <img src="https://avatars.githubusercontent.com/u/16767890?v=4" />
                         <a class="github_name me-auto">건유1019</a>
@@ -58,82 +61,174 @@
                         <a class="github_name me-auto">건유1019</a>
                         <span class="github_commits">60회</span>
                     </div> -->
-                </div>
             </div>
         </div>
-        <div class="firework"></div>
-        <div class="firework"></div>
-        <div class="firework"></div>
-    </section>
-    <div class="container">
-        <section id="introduce">
-            저는 컴퓨터공학과 23학번 이용현이라고 합니다!
-
-            저는 프로그래밍을 하나의 여행이라고 생각합니다.
-            많은 지역을 탐험하며, 많은 경험을 쌓아나가는 것 처럼 저는 다양한 종류의 프로그래밍을 진행해보고 싶습니다.
-
-            아직 구체적인 개발 분야를 정하진 않았지만, 다양한 분야의 프로그래밍을 진행해보고 싶습니다.
-            저는 취미로 프로그래밍을 하고 있으며, 창업을 해보고 싶다는 생각을 가지고 있습니다.
-            다른 팀원들보다 프로그래밍 실력이 부족할 수 있지만, 최선을 다해 프로젝트에 임하도록 하곘습니다!
-        </section>
-        <section id="programing">
-            <!-- 저는 주로 파이썬과 코틀린을 주로 사용하여 프로그래밍을 진행하고 있습니다.
-                이외에도 C언어, SQL, TypeScript, JavaScript 등 언어를 다루며, 필요할 때마다 찾아가며 배워나가고 있습니다. -->
-        </section>
-        <section id="activities">
-
-        </section>
-        <section id="project">
-
-        </section>
     </div>
-    <script type="application/javascript">
-        $( "span.main_title_emphasis" ).hover(function () {
-            $("div.firework").show();
-        }, function () {
-            $("div.firework").hide();
-        })
-        fetch('/mirae/api/commit_rank').then(function (response) {
-            // console.log('success!', response);
-            response.json().then(function (data) {
-                if (data.length > 0) {
-                    const sortedData = data.sort((a, b) => {
-                        if (a['commits'] > b['commits']) {
-                            return -1;
-                        }
-                    });
-                    document.querySelector('div.commit_rank_content').innerHTML = ""
-                    sortedData.slice(0, 3).forEach((githubUser, index) => {
-                        document.querySelector('div.commit_rank_content').innerHTML += `
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+</section>
+<section id="introduce" class="introduce_section">
+    <div class="container introduce_group">
+        <div>
+            <h2>👋 짜란?<br/> 저는 컴퓨터공학과 23학번 이용현이라고 합니다!</h2><br/>
+            <span>저는 프로그래밍을 <u>하나의 여행</u>이라고 생각합니다.</span><br/>
+            <span>많은 지역을 탐험하며, 많은 경험을 쌓아나가는 것 처럼 저는 <u>다양한 종류의 프로그래밍</u>을 진행해보고 싶습니다.</span><br/><br/>
+
+            <span>아직 구체적인 개발 분야를 정하진 않았지만, 다양한 분야의 프로그래밍을 진행해보고 싶습니다.</span>
+            <span>저는 취미로 프로그래밍을 하고 있으며, 창업을 해보고 싶다는 생각을 가지고 있습니다.</span>
+            <span>다른 팀원들보다 프로그래밍 실력이 부족할 수 있지만, 최선을 다해 프로젝트에 임하도록 하곘습니다!</span>
+        </div>
+        <div>
+            <img src="https://avatars.githubusercontent.com/u/16767890?v=4"/>
+        </div>
+    </div>
+</section>
+<section id="programing" class="programing_section">
+    <div class="programing_group">
+        <h2>프로그래밍의 폭풍은 정말 최고야!~</h2>
+        <span>코딩의 폭풍은 정말 최고야! 지금도 다양한 프로그래밍을 경험해보고 싶어요.</span>
+        <div class="image_group">
+            <a href="https://python.org">
+                <img src="/static/image/python.png" class="background"/>
+            </a>
+            <a href="https://docs.aiohttp.org/">
+                <img src="/static/image/aiohttp.svg" class="background" />
+            </a>
+            <a href="https://discordpy.readthedocs.io/en/stable/">
+            <img src="/static/image/discordpy.png" />
+            </a>
+            <a href="https://flask.palletsprojects.com/en/2.2.x/">
+                <img src="/static/image/flask.png" class="background" />
+            </a>
+            <a href="https://matplotlib.org/">
+                <img src="/static/image/matplotlib.png" class="background" />
+            </a>
+            <a href="https://pandas.pydata.org/">
+                <img src="/static/image/pandas.svg" style="background: #130754; padding: 10px"/>
+            </a>
+            <a href="https://pillow.readthedocs.io/en/stable/">
+                <img src="/static/image/pillow.png" class="background" />
+            </a>
+            <a href="https://www.sqlalchemy.org/">
+                <img src="/static/image/sqlalchemy.png" class="background" />
+            </a>
+            <a href="https://kotlinlang.org/">
+                <img src="/static/image/kotlin.png" />
+            </a>
+            <a href="https://developer.android.com/jetpack/compose">
+                <img src="/static/image/jetpack-compose.png" class="background" />
+            </a>
+            <a href="https://papermc.io/">
+                <img src="/static/image/paper.webp" class="background" />
+            </a>
+            <a class="https://www.typescriptlang.org/">
+                <img src="/static/image/typescript.svg" />
+            </a>
+            <a href="https://premid.app/">
+                <img src="/static/image/premid.jpeg" />
+            </a>
+            <a href="https://mariadb.org/">
+                <img src="/static/image/mariadb.png" class="background"/>
+            </a>
+            <a href="https://python.org">
+                <img src="/static/image/python.png" class="background"/>
+            </a>
+            <a href="https://docs.aiohttp.org/">
+                <img src="/static/image/aiohttp.svg" class="background" />
+            </a>
+            <a href="https://discordpy.readthedocs.io/en/stable/">
+            <img src="/static/image/discordpy.png" />
+            </a>
+            <a href="https://flask.palletsprojects.com/en/2.2.x/">
+                <img src="/static/image/flask.png" class="background" />
+            </a>
+            <a href="https://matplotlib.org/">
+                <img src="/static/image/matplotlib.png" class="background" />
+            </a>
+            <a href="https://pandas.pydata.org/">
+                <img src="/static/image/pandas.svg" style="background: #130754; padding: 10px"/>
+            </a>
+            <a href="https://pillow.readthedocs.io/en/stable/">
+                <img src="/static/image/pillow.png" class="background" />
+            </a>
+            <a href="https://www.sqlalchemy.org/">
+                <img src="/static/image/sqlalchemy.png" class="background" />
+            </a>
+            <a href="https://kotlinlang.org/">
+                <img src="/static/image/kotlin.png" />
+            </a>
+            <a href="https://developer.android.com/jetpack/compose">
+                <img src="/static/image/jetpack-compose.png" class="background" />
+            </a>
+            <a href="https://papermc.io/">
+                <img src="/static/image/paper.webp" class="background" />
+            </a>
+            <a class="https://www.typescriptlang.org/">
+                <img src="/static/image/typescript.svg" />
+            </a>
+            <a href="https://premid.app/">
+                <img src="/static/image/premid.jpeg" />
+            </a>
+            <a href="https://mariadb.org/">
+                <img src="/static/image/mariadb.png" class="background"/>
+            </a>
+        </div>
+    </div>
+</section>
+<section id="activities">
+
+</section>
+<section id="project">
+
+</section>
+<script type="application/javascript">
+    $("span.main_title_emphasis, div.firework").hover(function () {
+        $("div.firework").show();
+    }, function () {
+        $("div.firework").hide();
+    })
+    fetch('/mirae/api/commit_rank').then(function (response) {
+        // console.log('success!', response);
+        response.json().then(function (data) {
+            if (data.length > 0) {
+                const sortedData = data.sort((a, b) => {
+                    if (a['commits'] > b['commits']) {
+                        return -1;
+                    }
+                });
+                document.querySelector('div.commit_rank_content').innerHTML = ""
+                sortedData.slice(0, 3).forEach((githubUser, index) => {
+                    document.querySelector('div.commit_rank_content').innerHTML += `
                             <div class="github_content_group">
                             <img src="${githubUser['avatar']}" />
                             <a class="github_name me-auto" href="https://github.com/${githubUser['login']}">${githubUser['username']}</a>
                     <span class="github_commits">${githubUser['commits']}</span>
-                    <span class="github_rank">(&#12935${index+1};)</span>
+                    <span class="github_rank">(&#12935${index + 1};)</span>
                 </div>`
-                    });
-                    document.querySelector('div.commit_rank_content').innerHTML += `<hr class="hr hr-blurry" />`
-                    const myGithubInfo = sortedData.find(e => e['login'] == "gunyu1019")
-                    document.querySelector('div.commit_rank_content').innerHTML += `
+                });
+                document.querySelector('div.commit_rank_content').innerHTML += `<hr class="hr hr-blurry" />`
+                const myGithubInfo = sortedData.find(e => e['login'] == "gunyu1019")
+                document.querySelector('div.commit_rank_content').innerHTML += `
                             <div class="github_content_group">
                             <img src="${myGithubInfo['avatar']}" />
                             <a class="github_name me-auto" href="https://github.com/${myGithubInfo['login']}">${myGithubInfo['username']}</a>
                     <span class="github_commits">${myGithubInfo['commits']}</span>
                 `
-                } else {
-                    document.querySelector('div.commit_rank_content').innerHTML = `
+            } else {
+                document.querySelector('div.commit_rank_content').innerHTML = `
                     <div class="commit_rank_text">
                         <span>&#009888; Something Wrong</span>
                     </div>`
-                }
-            })
-        }).catch(function (err) {
-            // console.warn('Something went wrong.', err);
-            document.querySelector('div.commit_rank_content').innerHTML = `
+            }
+        })
+    }).catch(function (err) {
+        // console.warn('Something went wrong.', err);
+        document.querySelector('div.commit_rank_content').innerHTML = `
                     <div class="commit_rank_text">
                         <span>&#009888; Failed</span>
                     </div>`
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
