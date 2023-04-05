@@ -46,6 +46,9 @@ public class ApiController {
         Type listOfGithubOrganzationUser = new TypeToken<ArrayList<GithubOrganzationUserDto>>() {}.getType();
         ArrayList<GithubOrganzationUserDto> organzationMember;
         try (Response response = client.newCall(request1).execute()){
+            if (response.code() != 200) {
+                return new ArrayList<>();
+            }
             organzationMember = gson.fromJson(Objects.requireNonNull(response.body()).string(), listOfGithubOrganzationUser);
         } catch (IOException e) {
             throw new RuntimeException(e);
