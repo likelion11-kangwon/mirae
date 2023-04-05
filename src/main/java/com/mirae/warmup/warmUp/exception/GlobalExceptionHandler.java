@@ -24,6 +24,7 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return "error";
     }
+
     /* 서버 오류 입니다. */
     @ExceptionHandler(Exception.class)
     public String handleException(Exception e) {
