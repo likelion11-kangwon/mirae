@@ -8,10 +8,12 @@ import com.mirae.warmup.warmUp.dto.GithubOrganzationUserDto;
 import com.mirae.warmup.warmUp.dto.GithubUserDto;
 import okhttp3.*;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -63,10 +65,13 @@ public class ApiController {
             Request request2 = new Request.Builder()
                     .url("https://api.github.com/graphql")
                     .post(body)
-                    .addHeader("Authorization", String.format("Bearer %s", githubToken))
+                    // .addHeader("Authorization", String.format("Bearer %s", githubToken))
                     .build();
             GithubUserDto userInfo;
             try (Response response = client.newCall(request2).execute()){
+                if (response.code() != 200) {
+                    return new ArrayList<>();
+                }
                 Map<String, Map<String, Map<String, Object>>> githubData = gson.fromJson(Objects.requireNonNull(response.body()).string(), Map.class);
                 // System.out.println(githubData.get("data").get("user").toString());
                 // userInfo = gson.fromJson(githubData.get("data").get("user").toString(), GithubUserDto.class);

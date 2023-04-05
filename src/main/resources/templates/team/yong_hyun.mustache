@@ -20,11 +20,52 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
+    <section id="main" class="main_section">
+        <div class="main_group">
+            <span class="main_title">
+                오늘도 <span class="main_title_emphasis">즐코</span>하세요!
+            </span>
+
+            <div class="commit_rank_group">
+                <span class="commit_rank_description">저는 멤버분들이 열심히 즐코시는지 구경하고 있습니다.</span>
+                <!-- Rank Sample (🥇🥈🥉) -->
+                <div class="commit_rank_content">
+                    <div class="commit_rank_text">
+                        <div id="spinnerIndicator"></div>
+                        <span>Loading</span>
+                    </div> <!--
+                    <div class="github_content_group">
+                        <img src="https://avatars.githubusercontent.com/u/16767890?v=4" />
+                        <a class="github_name me-auto">건유1019</a>
+                        <span class="github_commits">60회</span>
+                        <span class="github_rank">(&#129351;)</span>
+                    </div>
+                    <div class="github_content_group">
+                        <img src="https://avatars.githubusercontent.com/u/16767890?v=4" />
+                        <a class="github_name me-auto">건유1019</a>
+                        <span class="github_commits">60회</span>
+                        <span class="github_rank">(&#129352;)</span>
+                    </div>
+                    <div class="github_content_group">
+                        <img src="https://avatars.githubusercontent.com/u/16767890?v=4" />
+                        <a class="github_name me-auto">건유1019</a>
+                        <span class="github_commits">60회</span>
+                        <span class="github_rank">(&#129353;)</span>
+                    </div>
+                    <hr class="hr hr-blurry" />
+                    <div class="github_content_group">
+                        <img src="https://avatars.githubusercontent.com/u/16767890?v=4" />
+                        <a class="github_name me-auto">건유1019</a>
+                        <span class="github_commits">60회</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </section>
     <div class="container">
-        <section id="main">
-            오늘도 즐코하세요!
-            <!-- 멋쟁이 사자처럼 커밋 랭킹 (리스트 1위..3위 / ME) -->
-        </section>
         <section id="introduce">
             저는 컴퓨터공학과 23학번 이용현이라고 합니다!
 
@@ -47,7 +88,52 @@
         </section>
     </div>
     <script type="application/javascript">
-        <!-- main section의 랭킹을 불러오는 소스, REST API 사용 예정 -->
+        $( "span.main_title_emphasis" ).hover(function () {
+            $("div.firework").show();
+        }, function () {
+            $("div.firework").hide();
+        })
+        fetch('/mirae/api/commit_rank').then(function (response) {
+            // console.log('success!', response);
+            response.json().then(function (data) {
+                if (data.length > 0) {
+                    const sortedData = data.sort((a, b) => {
+                        if (a['commits'] > b['commits']) {
+                            return -1;
+                        }
+                    });
+                    document.querySelector('div.commit_rank_content').innerHTML = ""
+                    sortedData.slice(0, 3).forEach((githubUser, index) => {
+                        document.querySelector('div.commit_rank_content').innerHTML += `
+                            <div class="github_content_group">
+                            <img src="${githubUser['avatar']}" />
+                            <a class="github_name me-auto" href="https://github.com/${githubUser['login']}">${githubUser['username']}</a>
+                    <span class="github_commits">${githubUser['commits']}</span>
+                    <span class="github_rank">(&#12935${index+1};)</span>
+                </div>`
+                    });
+                    document.querySelector('div.commit_rank_content').innerHTML += `<hr class="hr hr-blurry" />`
+                    const myGithubInfo = sortedData.find(e => e['login'] == "gunyu1019")
+                    document.querySelector('div.commit_rank_content').innerHTML += `
+                            <div class="github_content_group">
+                            <img src="${myGithubInfo['avatar']}" />
+                            <a class="github_name me-auto" href="https://github.com/${myGithubInfo['login']}">${myGithubInfo['username']}</a>
+                    <span class="github_commits">${myGithubInfo['commits']}</span>
+                `
+                } else {
+                    document.querySelector('div.commit_rank_content').innerHTML = `
+                    <div class="commit_rank_text">
+                        <span>&#009888; Something Wrong</span>
+                    </div>`
+                }
+            })
+        }).catch(function (err) {
+            // console.warn('Something went wrong.', err);
+            document.querySelector('div.commit_rank_content').innerHTML = `
+                    <div class="commit_rank_text">
+                        <span>&#009888; Failed</span>
+                    </div>`
+        });
     </script>
 </body>
 </html>
