@@ -52,6 +52,13 @@
             </div>
         </div>
     </div>
+    {{#login}}
+        <div class="index_footer">
+            <span class="login_description">개인 페이지를 보려면 로그인이 필요합니다.</span>
+            <a class="button" href="/mirae/loginForm">로그인</a>
+            <a class="button" href="/mirae/joinForm">회원가입</a>
+        </div>
+    {{/login}}
     <script type="application/javascript">
         let delay = 300;
         let timer = null;

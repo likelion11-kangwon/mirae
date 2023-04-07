@@ -129,3 +129,41 @@ div.index_body div.team_description span {
         font-size: 18px;
     }
 }
+
+div.index_footer {
+    align-items: center;
+    background: #8FB444;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    min-height: 55px;
+    width: 100%;
+}
+
+div.index_footer span.login_description {
+    color: #5A5A5A;
+    font-family: Pretendard, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+div.index_footer a.button {
+    background: #FFFFFF;
+    border-radius: 24px;
+    color: #89AF3A;
+    font-family: Pretendard, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 6px 30px;
+    margin: 0 0 0 30px;
+    text-decoration: none;
+    transition: ease-out 0.3s;
+}
+
+div.index_footer a.button:hover {
+    outline: solid #FFFFFF 1px;
+    color: #FFFFFF;
+    background: #89AF3A;
+    text-decoration: none;
+}
