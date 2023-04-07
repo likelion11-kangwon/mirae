@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService {
                     .provider(userEntity.getProvider())
                     .providerId(userEntity.getProviderId())
                     .age(userEntity.getAge())
+                    .name(userEntity.getName())
                     .build();
             return userDto;
         }
@@ -52,6 +53,7 @@ public class UserServiceImpl implements UserService {
                 .provider(userDto.getProvider())
                 .providerId(userDto.getProviderId())
                 .role(userDto.getRole())
+                .name(userDto.getName())
                 .build();
 
         String rawPassword = userDto.getPassword();

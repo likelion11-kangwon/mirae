@@ -60,6 +60,7 @@ public class PrincipalOAuth2UserService extends DefaultOAuth2UserService {
         String username = provider + providerId;
         String password = bCryptPasswordEncoder.encode("미래씨");
         String email = oAuth2UserInfo.getEmail();
+        String name = oAuth2UserInfo.getName();
         String role = "ROLE_USER";
 
         User userEntity = userService.getUserEntity(username);
@@ -73,6 +74,7 @@ public class PrincipalOAuth2UserService extends DefaultOAuth2UserService {
                     .email(email)
                     .provider(provider)
                     .providerId(providerId)
+                    .name(name)
                     .build();
             userService.saveUserEntity(userEntity);
         }

@@ -23,4 +23,6 @@ public class UserDto {
 
     private String providerId;
 
+    private String name;
+
 }
