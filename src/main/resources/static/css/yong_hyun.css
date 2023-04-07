@@ -345,6 +345,7 @@ section.programing_section div.programing_group {
 section.programing_section div.programing_group h2 {
     font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
     width: 100%;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -354,7 +355,7 @@ section.programing_section div.programing_group span {
 }
 
 section.programing_section div.programing_group div.image_group {
-    padding: 50px 0 0 0;
+    padding: 50px 0;
     display: flex;
     flex-wrap: nowrap;
     align-content: center;
@@ -377,4 +378,55 @@ section.programing_section div.programing_group div.image_group img {
 @keyframes image_index {
     0% { transform: translate(0%, 0) }
     100% { transform: translate(calc((-170px * 14)), 0) }
+}
+
+section.programing_section div.programing_group div.group_field div.item_field span {
+    display: block;
+    padding: 0 0 5px 0;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field h5 {
+    font-weight: bold;
+    padding: 5px 0 0 0;
+}
+
+section.programing_section div.programing_group div.group_field {
+    text-align: start;
+}
+
+@media screen and (min-width: 1000px) {
+    section.programing_section div.programing_group div.group_field {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section.programing_section div.programing_group div.group_field div.item_field {
+        padding: 0 0 10px 0;
+    }
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li {
+    color: white;
+    font-size: 18px;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    padding: 3px 0;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    border-radius: 10px;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li a:hover {
+    color: white;
+    text-decoration: none;
 }
