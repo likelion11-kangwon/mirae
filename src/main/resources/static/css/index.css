@@ -1,0 +1,173 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div.index_header {
+    background: #7CA623;
+    min-height: 126px;
+}
+
+div.index_header h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 32px 0 16px 0;
+    font-size: 48px;
+    font-weight: 800;
+    font-family: Pretendard, sans-serif;
+}
+
+div.index_header div.track {
+    align-items: center;
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 100vw;
+}
+
+div.index_header div.track span.track_item {
+    color: #5C7A1F;
+    font-size: 18px;
+    font-weight: 600;
+    height: 100%;
+    animation: track_animation 10s linear infinite;
+}
+
+
+@keyframes track_animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+div.index_body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1140px) {
+    div.index_body {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+    }
+}
+
+div.index_body div.team_group {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 1140px) {
+    div.index_body {
+        padding: 100px 0 100px 0;
+    }
+
+    div.index_body div.team_group {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    div.index_body div.team_group a.team_info {
+        flex: 1 1 40%;
+    }
+}
+
+div.index_body div.team_group a.team_info {
+    align-items: center;
+    display: flex;
+    color: #545454;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    justify-content: space-evenly;
+}
+
+div.index_body div.team_group a.team_info:hover {
+    color: #545454;
+    text-decoration: none;
+}
+
+div.index_body div.team_group a.team_info span {
+    font-family: Pretendard, sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    margin: 16px 0 0 0;
+}
+
+div.index_body div.team_group a.team_info span:hover {
+    font-weight: bolder !important;
+}
+
+div.index_body div.team_group a.team_info img {
+    width: 208px;
+    height: 208px;
+    border: solid #000000 1px;
+    border-radius: 104px;
+}
+
+div.index_body div.team_description {
+    padding: 100px 0 0 0;
+}
+
+div.index_body div.team_description span {
+    display: block;
+    font-family: Pretendard, sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media screen and (max-width: 520px) {
+    div.index_body div.team_description span {
+        font-size: 18px;
+    }
+}
+
+div.index_footer {
+    align-items: center;
+    background: #8FB444;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    min-height: 55px;
+    width: 100%;
+}
+
+div.index_footer span.login_description {
+    color: #5A5A5A;
+    font-family: Pretendard, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+div.index_footer a.button {
+    background: #FFFFFF;
+    border-radius: 24px;
+    color: #89AF3A;
+    font-family: Pretendard, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 6px 30px;
+    margin: 0 0 0 30px;
+    text-decoration: none;
+    transition: ease-out 0.3s;
+}
+
+div.index_footer a.button:hover {
+    outline: solid #FFFFFF 1px;
+    color: #FFFFFF;
+    background: #89AF3A;
+    text-decoration: none;
+}
