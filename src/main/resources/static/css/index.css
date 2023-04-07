@@ -1,0 +1,85 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+div.index_header {
+    background: #7CA623;
+    min-height: 126px;
+}
+
+div.index_header h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 32px 0 16px 0;
+    font-size: 48px;
+    font-weight: 800;
+    font-family: Pretendard, sans-serif;
+}
+
+div.index_header div.track {
+    align-items: center;
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 100vw;
+}
+
+div.index_header div.track span.track_item {
+    color: #5C7A1F;
+    font-size: 18px;
+    font-weight: 600;
+    height: 100%;
+    animation: track_animation 10s linear infinite;
+}
+
+
+@keyframes track_animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+div.team_group {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+div.team_group a.team_info {
+    align-items: center;
+    display: flex;
+    color: #545454;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    justify-content: space-evenly;
+}
+
+div.team_group a.team_info:hover {
+    color: #545454;
+    text-decoration: none;
+}
+
+div.team_group a.team_info span {
+    font-family: Pretendard, sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    margin: 16px 0 0 0;
+}
+
+div.team_group a.team_info img {
+    width: 208px;
+    height: 208px;
+    border: solid #000000 1px;
+    border-radius: 104px;
+}

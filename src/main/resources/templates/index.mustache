@@ -3,18 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>미래씨 MIRAESEE</title>
+    {{>layout/bootstrap}}
 
-    {{>layout/bootstrap.mustache}}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"></script>
+
+    <!-- Personal CSS -->
+    <link href="/static/css/index.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-    <div>
+    <div class="index_header">
         <h1>미래씨 MIRAESEE</h1>
-        <div>
-            <span>MIRAESEE</span>
+        <div class="track">
+            <span class="track_item">MIRAESEE</span>
         </div>
     </div>
-    <div>
-
+    <div class="container">
+        <div class="team_group container">
+            <a class="team_info" href="/team/1">
+                <img src="/img/index/team1.png" />
+                <span>김찬우</span>
+            </a>
+            <a class="team_info" href="/team/1">
+                <img src="/img/index/team1.png" />
+                <span>김찬우</span>
+            </a>
+            <a class="team_info" href="/team/1">
+                <img src="/img/index/team1.png" />
+                <span>김찬우</span>
+            </a>
+            <a class="team_info" href="/team/1">
+                <img src="/img/index/team1.png" />
+                <span>김찬우</span>
+            </a>
+        </div>
     </div>
+    <script type="application/javascript">
+        let delay = 300;
+        let timer = null;
+
+        function trackText() {
+            document.querySelector("div.track").innerHTML = ""
+            for (let step = 0; step < screen.width * 2; step += 82.9167) {
+                document.querySelector("div.track").innerHTML += `<span class="track_item">MIRAESEE</span>`
+            }
+        }
+        window.addEventListener('resize', function () {
+            clearTimeout(timer);
+            document.querySelector("div.track").innerHTML = ""
+            timer = setTimeout(function(){
+                this.trackText()
+            }, delay);
+
+        })
+        window.addEventListener('DOMContentLoaded', function () {
+            this.trackText()
+        })
+    </script>
 </body>
 </html>
