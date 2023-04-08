@@ -446,14 +446,35 @@ section.programing_section div.programing_group div.group_field div.item_field u
     text-decoration: none;
 }
 
+section.activities_section div.activities_group h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-weight: bold;
+}
+
+section.activities_section div.activities_group span {
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+    section.activities_section div.activities_group div.activity_card_group {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    section.activities_section div.activities_group div.activity_card_group {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}
+
 section.activities_section div.activities_group div.activity_card_group {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
     gap: 30px;
-    padding: 50px 0 0 0;
+    padding: 50px 0 50px 0;
 }
 
 section.activities_section div.activities_group div.activity_card {
