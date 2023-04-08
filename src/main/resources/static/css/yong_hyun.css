@@ -1,16 +1,16 @@
 @font-face{
     font-family: "Jalnan";
-    src: url("../font/Jalnan.ttf");
+    src: url("../fonts/Jalnan.ttf");
 }
 
 @font-face{
     font-family: "NotoSansKR-Bold";
-    src: url("../font/NotoSansKR/NotoSansKR-Bold.otf");
+    src: url("../fonts/NotoSansKR/NotoSansKR-Bold.otf");
 }
 
 @font-face{
     font-family: "NotoSansKR-Medium";
-    src: url("../font/NotoSansKR/NotoSansKR-Medium.otf");
+    src: url("../fonts/NotoSansKR/NotoSansKR-Medium.otf");
 }
 
 body {
@@ -411,6 +411,7 @@ section.programing_section div.programing_group div.group_field {
 @media screen and (min-width: 1000px) {
     section.programing_section div.programing_group div.group_field {
         display: grid;
+        gap: 30px;
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -443,4 +444,52 @@ section.programing_section div.programing_group div.group_field div.item_field u
 section.programing_section div.programing_group div.group_field div.item_field ul li a:hover {
     color: white;
     text-decoration: none;
+}
+
+section.activities_section div.activities_group div.activity_card_group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 50px 0 0 0;
+}
+
+section.activities_section div.activities_group div.activity_card {
+    background: #373b3e;
+    border-radius: 30px;
+}
+
+section.activities_section div.activities_group div.activity_card {
+    background: #373b3e;
+    border-radius: 30px;
+    width: 100%;
+}
+
+section.activities_section div.activities_group div.activity_card img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+section.activities_section div.activities_group div.activity_card span {
+    display: block;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    padding: 0 0 6px 0;
+    font-size: 16px;
+}
+
+section.activities_section div.activities_group div.activity_card div.activity_card_body {
+    padding: 16px;
+}
+
+section.activities_section div.activities_group div.activity_card h2 {
+    padding: 0 0 10px 0;
+    font-weight: 800;
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-size: 30px;
+}
+
+section.activities_section div.activities_group div.activity_card .activity_emoji_icon {
+    display: contents;
 }
