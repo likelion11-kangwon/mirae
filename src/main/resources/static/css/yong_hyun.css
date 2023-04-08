@@ -68,7 +68,7 @@ section.main_section div.main_group span.main_title {
     font-family: Jalnan, "Jalnan", sans-serif;
 }
 
-section.main_section div.main_group span.main_title span.main_title_emphasis {
+span.main_title_emphasis {
     background: linear-gradient(45deg, #ff8080, #8080ff);
     background-size: 200% 100%;
     -webkit-background-clip: text;
@@ -321,7 +321,7 @@ section.introduce_section {
     min-height: 60vh;
 }
 
-section.introduce_section div.introduce_group span {
+section.introduce_section div.introduce_group span.introduce_description {
     display: inline-block;
     font-size: 16px;
     font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
@@ -399,13 +399,19 @@ section.programing_section div.programing_group div.image_group img {
     100% { transform: translate(calc((-170px * 14)), 0) }
 }
 
+section.programing_section div.programing_group div.group_field div.item_field h3 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+}
+
 section.programing_section div.programing_group div.group_field div.item_field span {
     display: block;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
     padding: 0 0 5px 0;
 }
 
 section.programing_section div.programing_group div.group_field div.item_field h5 {
     font-weight: bold;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
     padding: 5px 0 0 0;
 }
 
@@ -498,10 +504,18 @@ section.activities_section div.activities_group div.activity_card img {
     border-radius: 20px 20px 0 0;
 }
 
+section.activities_section div.activities_group span {
+    display: block;
+}
+
 section.activities_section div.activities_group div.activity_card span {
     display: block;
-    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
     padding: 0 0 6px 0;
+}
+
+section.activities_section div.activities_group div.activity_card span,
+section.activities_section div.activities_group div.activity_card ul li {
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
     font-size: 16px;
 }
 

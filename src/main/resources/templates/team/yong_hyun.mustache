@@ -26,7 +26,7 @@
 <section id="main" class="main_section">
     <div class="main_group">
             <span class="main_title">
-                오늘도 <span class="main_title_emphasis">즐코</span>하세요!
+                오늘도 <span class="main_title_emphasis" id="firework_hover">즐코</span>하세요!
             </span>
 
         <div class="commit_rank_group">
@@ -71,13 +71,13 @@
 <section id="introduce" class="introduce_section">
     <div class="container introduce_group">
         <div>
-            <h2>👋 짜란?<br/> 저는 컴퓨터공학과 23학번 이용현이라고 합니다!</h2><br/>
-            <span>저는 프로그래밍을 <u>하나의 여행</u>이라고 생각합니다.</span><br/>
-            <span>많은 지역을 탐험하며, 많은 경험을 쌓아나가는 것 처럼 저는 <u>다양한 종류의 프로그래밍</u>을 진행해보고 싶습니다.</span><br/><br/>
+            <h2>👋 짜란?<br/> 저는 컴퓨터공학과 23학번 <span class="main_title_emphasis">이용현</span>이라고 합니다!</h2><br/>
+            <span class="introduce_description">저는 프로그래밍을 <u>하나의 여행</u>이라고 생각합니다.</span><br/>
+            <span class="introduce_description">많은 지역을 탐험하며, 많은 경험을 쌓아나가는 것 처럼 저는 <u>다양한 종류의 프로그래밍</u>을 진행해보고 싶습니다.</span><br/><br/>
 
-            <span>아직 구체적인 개발 분야를 정하진 않았지만, 다양한 분야의 프로그래밍을 진행해보고 싶습니다.</span>
-            <span>저는 취미로 프로그래밍을 하고 있으며, 창업을 해보고 싶다는 생각을 가지고 있습니다.</span>
-            <span>다른 팀원들보다 프로그래밍 실력이 부족할 수 있지만, 최선을 다해 프로젝트에 임하도록 하곘습니다!</span>
+            <span class="introduce_description">아직 구체적인 개발 분야를 정하진 않았지만, 다양한 분야의 프로그래밍을 진행해보고 싶습니다.</span>
+            <span class="introduce_description">저는 취미로 프로그래밍을 하고 있으며, 창업을 해보고 싶다는 생각을 가지고 있습니다.</span>
+            <span class="introduce_description">다른 팀원들보다 프로그래밍 실력이 부족할 수 있지만, 최선을 다해 프로젝트에 임하도록 하곘습니다!</span>
         </div>
         <div>
             <img src="https://avatars.githubusercontent.com/u/16767890?v=4"/>
@@ -331,8 +331,10 @@
         </div>
     </div>
 </section>
+<section id="contact" class="contact_section">
+</section>
 <script type="application/javascript">
-    $("span.main_title_emphasis, div.firework").hover(function () {
+    $("span#firework_hover, div.firework").hover(function () {
         $("div.firework").show();
     }, function () {
         $("div.firework").hide();
