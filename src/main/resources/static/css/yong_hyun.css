@@ -13,6 +13,11 @@
     src: url("../fonts/NotoSansKR/NotoSansKR-Medium.otf");
 }
 
+@font-face{
+    font-family: "NotoSansKR-Regular";
+    src: url("../fonts/NotoSansKR/NotoSansKR-Regular.otf");
+}
+
 body {
     background: #1e2125;
     color: white;
@@ -523,4 +528,31 @@ section.activities_section div.activities_group div.activity_card .activity_imag
 
 section.activities_section div.activities_group div.activity_card .activity_image_refresh:hover {
     color: #8080ff;
+}
+
+section.activities_section div.activities_group div.activity_card button.activity_button {
+    background: #606060;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+section.activities_section div.activities_group div.activity_card button.activity_button:hover {
+    background: #505050;
+}
+
+h5.modal-title {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-weight: bold;
+}
+
+div.modal-body ul li {
+    font-family: NotoSansKR-Regular, "Noto Sans KR", sans-serif;
+    font-size: 16px;
 }

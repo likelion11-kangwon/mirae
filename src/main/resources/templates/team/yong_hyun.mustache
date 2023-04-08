@@ -233,6 +233,40 @@
         <h2>저는 코딩만 하지 않아요~</h2>
         <span>저는 코딩 이외에도 다양한 활동을 좋아합니다.</span>
         <span>코딩을 즐겨하고 좋아하지만, 아래의 3개 활동을 포함해서 다양한 활동을 하는 것을 좋아합니다.</span>
+        <div class="modal fade" id="favoriteGameModal" tabindex="-1" aria-labelledby="favoriteGameModalLabel" aria-hidden="true" data-bs-theme="dark">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="favoriteGameModalLabel">좋아하는 게임 목록</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><b>51 Worldwide Games</b></li>
+                            <li><b>A Dance of Fire and Ice</b></li>
+                            <li><b>Cities: Skylines</b></li>
+                            <li>Euro Truck Simulator 2</li>
+                            <li>Factorio</li>
+                            <li>Fall Guys</li>
+                            <li>Forza Horizon 5</li>
+                            <li>Grand Theft Auto V</li>
+                            <li><b>Marvel's Spider-Man: Miles Morales</b></li>
+                            <li><b>Marvel's Spider-Man Remastered</b></li>
+                            <li>Mini Motorways</li>
+                            <li>Minecraft</li>
+                            <li>Oxygen Not Included</li>
+                            <li>PUBG: BATTLEGROUNDS</li>
+                            <li>Satisfactory</li>
+                            <li>Splatoon 3</li>
+                            <li><b>Tom Clancy's Rainbow Six Siege</b></li>
+                            <li><b>Valorant</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="activity_card_group">
             <div class="activity_card">
                 <i class="fa fa-refresh activity_image_refresh" aria-hidden="true" onclick="travelImageUpdate()"></i>
@@ -264,8 +298,16 @@
                     <span>
                         제가 가장 좋아하는 음식은 이탈리아의 젤라또(Gelato)를 상당히 좋아합니다.
                         이외에도 삼겹살, 집밥? 등을 인스턴트보다 영양분이 풍부한 음식을 좋아합니다.
+                        하지만, 라면과 햄버거 등 패스트푸드는 그리 좋아하지 않습니다.
                     </span>
-                    <span>하지만, 라면과 햄버거 등 패스트푸드는 그리 좋아하지 않습니다.</span>
+                    <span>기회가 된다면 아래의 음식들을 먹어보고 싶습니다.</span>
+                    <ul>
+                        <li>미국 디트로이드 피자</li>
+                        <li>미국 텍사스 바베큐</li>
+                        <li>일본 미즈사와 우동</li>
+                        <li>터키 카이막</li>
+                        <li>영국 카레</li>
+                    </ul>
                 </div>
             </div>
             <div class="activity_card">
@@ -281,6 +323,9 @@
                         대학교 입학하고 나서, 게임을 하는 빈도 수가 많이 줄어들 긴 했지만, 그래도 게임을 좋아합니다.
                     </span>
                     <span>저는 시뮬레이션, FPS 등 다양한 종류의 게임을 즐겨하는 편입니다.</span>
+                    <button type="button" class="activity_button" data-bs-toggle="modal" data-bs-target="#favoriteGameModal">
+                        저는 이런 게임을 자주하고 좋아합니다!
+                    </button>
                 </div>
             </div>
         </div>
