@@ -4,10 +4,9 @@ function githubRank() {
         response.json().then(function (data) {
             if (data.length > 0) {
                 const sortedData = data.sort((a, b) => {
-                    if (a['commits'] > b['commits']) {
-                        return -1;
-                    }
+                    return a.commits - b.commits;
                 });
+                sortedData.reverse()
                 document.querySelector('div.commit_rank_content').innerHTML = ""
                 sortedData.slice(0, 3).forEach((githubUser, index) => {
                     document.querySelector('div.commit_rank_content').innerHTML += `
