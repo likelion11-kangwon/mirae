@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,8 @@ public class MainController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping({"home", ""})
-    public String home(){
+    public String home(@AuthenticationPrincipal PrincipalDetails principalDetails, Model model) {
+        model.addAttribute("login", principalDetails == null);
         return "index";
     }
 
