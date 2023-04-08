@@ -18,6 +18,10 @@
 
     <!-- Personal Javascript -->
     <script src="/static/javascript/autoscroll.js"></script>
+    <script src="/static/javascript/autoTracker.js"></script>
+    <script src="/static/javascript/firework.js"></script>
+    <script src="/static/javascript/githubRank.js"></script>
+    <script src="/static/javascript/imageUpdate.js"></script>
 
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -89,48 +93,6 @@
         <h2>프로그래밍의 폭풍은 정말 최고야!~</h2>
         <span>코딩의 폭풍은 정말 최고야! 지금도 다양한 프로그래밍을 경험해보고 싶어요.</span>
         <div class="image_group">
-            <a href="https://python.org">
-                <img src="/static/img/yong_hyun/icon/python.png" class="background"/>
-            </a>
-            <a href="https://docs.aiohttp.org/">
-                <img src="/static/img/yong_hyun/icon/aiohttp.svg" class="background"/>
-            </a>
-            <a href="https://discordpy.readthedocs.io/en/stable/">
-                <img src="/static/img/yong_hyun/icon/discordpy.png"/>
-            </a>
-            <a href="https://flask.palletsprojects.com/en/2.2.x/">
-                <img src="/static/img/yong_hyun/icon/flask.png" class="background"/>
-            </a>
-            <a href="https://matplotlib.org/">
-                <img src="/static/img/yong_hyun/icon/matplotlib.png" class="background"/>
-            </a>
-            <a href="https://pandas.pydata.org/">
-                <img src="/static/img/yong_hyun/icon/pandas.svg" style="background: #130754; padding: 10px"/>
-            </a>
-            <a href="https://pillow.readthedocs.io/en/stable/">
-                <img src="/static/img/yong_hyun/icon/pillow.png" class="background"/>
-            </a>
-            <a href="https://www.sqlalchemy.org/">
-                <img src="/static/img/yong_hyun/icon/sqlalchemy.png" class="background"/>
-            </a>
-            <a href="https://kotlinlang.org/">
-                <img src="/static/img/yong_hyun/icon/kotlin.png"/>
-            </a>
-            <a href="https://developer.android.com/jetpack/compose">
-                <img src="/static/img/yong_hyun/icon/jetpack-compose.png" class="background"/>
-            </a>
-            <a href="https://papermc.io/">
-                <img src="/static/img/yong_hyun/icon/paper.webp" class="background"/>
-            </a>
-            <a class="https://www.typescriptlang.org/">
-                <img src="/static/img/yong_hyun/icon/typescript.svg"/>
-            </a>
-            <a href="https://premid.app/">
-                <img src="/static/img/yong_hyun/icon/premid.jpeg"/>
-            </a>
-            <a href="https://mariadb.org/">
-                <img src="/static/img/yong_hyun/icon/mariadb.png" class="background"/>
-            </a>
             <a href="https://python.org">
                 <img src="/static/img/yong_hyun/icon/python.png" class="background"/>
             </a>
@@ -314,7 +276,7 @@
                 <i class="fa fa-refresh activity_image_refresh" aria-hidden="true" onclick="gameImageUpdate()"></i>
                 <img src="/static/img/yong_hyun/game/Spider_Man.jpg" id="activity_image_2"/>
                 <div class="activity_card_body">
-                    <h2>게임 == 쿨러</h2>
+                    <h2>게임 == 인간 쿨러</h2>
                     <span>
                         가끔은 스트레스를 많이 받는다면, 게임을 통해 스트레스를 해소하기도 합니다.
                         친구들과 함께할 수 있는 게임 아니면 혼자서 즐길 수 있는 게임 둘 다 좋아합니다.
@@ -332,121 +294,21 @@
     </div>
 </section>
 <section id="contact" class="contact_section">
+    <div></div>
 </section>
 <script type="application/javascript">
-    $("span#firework_hover, div.firework").hover(function () {
-        $("div.firework").show();
-    }, function () {
-        $("div.firework").hide();
+    let groupContent = document.querySelector('div.image_group').innerHTML
+    window.addEventListener("resize", function () {
+        autoedTracker(groupContent)
     })
-
-    function randomChoice(data) {
-        return data[Math.floor(Math.random() * data.length)];
-    }
-
-    function travelImageUpdate() {
-        document.querySelector("img#activity_image_1").src = `/static/img/yong_hyun/travel/${randomChoice(travelImageFileNameList)}`
-    }
-
-    function gameImageUpdate() {
-        document.querySelector("img#activity_image_2").src = `/static/img/yong_hyun/game/${randomChoice(gameImageFileNameList)}`
-    }
-
-    const gameImageFileNameList = [
-        "51_Worldwide_Games.png",
-        "A_Dance_Fire_And_Ice_1.png",
-        "A_Dance_Fire_And_Ice_2.png",
-        "A_Dance_Fire_And_Ice_3.jpg",
-        "Cities_Skylines.png",
-        "Euro_Truck_Simulator.jpg",
-        "Factorio_1.png",
-        "Factorio_2.png",
-        "Fall_Guys.png",
-        "Grand_Theif_Auto_1.png",
-        "Grand_Theif_Auto_2.png",
-        "Oxygen_Not_Included.jpg",
-        "PUBG.png",
-        "R6.png",
-        "Satisfactory.jpg",
-        "Satisfactory_2.jpg",
-        "Spider_Man.jpg",
-        "Spider_Man_DLC.jpg",
-        "Spider_Man_Miles_Morales.jpg",
-        "Spider_Man_Pizza.jpg",
-        "Valorant_1.png",
-        "Valorant_2.png",
-        "Valorant_3.png"
-    ];
-    const travelImageFileNameList = [
-        "Cheongsong_sunset.jpg",
-        "Gangnam_Coex.jpg",
-        "Italy_Napoli_2.jpg",
-        "Italy_Spain_Stair.jpg",
-        "Italy_Venezia.jpg",
-        "Italy_Vittorio_Emanuele_II.jpg",
-        "Jecheon_Forest_Resom.jpg",
-        "Jeju_Seongsanbong.jpg",
-        "Jeongseon_High1.jpg",
-        "Jeongseon_Najon.jpg",
-        "Paris_1.jpg",
-        "Paris_2.jpg",
-        "Plane.jpg",
-        "Singapore.jpg",
-        "Sockcho.jpg",
-        "Yangpyeong.jpg",
-        "Yangyang_Naksansa_1.jpg",
-        "Yangyang_Naksansa_2.jpg",
-        "Yangyang_Seorak_Mountain_2.jpg",
-    ];
-
     window.addEventListener("DOMContentLoaded", function () {
         const emojiList = ["&#127857;", "&#127834;", "&#127837;", "&#127844;", "&#129374;", "&#127846;"]
         document.querySelector("div#activity_emoji_icon").innerHTML = randomChoice(emojiList)
         travelImageUpdate();
         gameImageUpdate();
-
-        fetch('/mirae/api/commit_rank').then(function (response) {
-            // console.log('success!', response);
-            response.json().then(function (data) {
-                if (data.length > 0) {
-                    const sortedData = data.sort((a, b) => {
-                        if (a['commits'] > b['commits']) {
-                            return -1;
-                        }
-                    });
-                    document.querySelector('div.commit_rank_content').innerHTML = ""
-                    sortedData.slice(0, 3).forEach((githubUser, index) => {
-                        document.querySelector('div.commit_rank_content').innerHTML += `
-                            <div class="github_content_group">
-                            <img src="${githubUser['avatar']}" />
-                            <a class="github_name me-auto" href="https://github.com/${githubUser['login']}">${githubUser['username']}</a>
-                    <span class="github_commits">${githubUser['commits']}</span>
-                    <span class="github_rank">(&#12935${index + 1};)</span>
-                </div>`
-                    });
-                    document.querySelector('div.commit_rank_content').innerHTML += `<hr class="hr hr-blurry" />`
-                    const myGithubInfo = sortedData.find(e => e['login'] == "gunyu1019")
-                    document.querySelector('div.commit_rank_content').innerHTML += `
-                            <div class="github_content_group">
-                            <img src="${myGithubInfo['avatar']}" />
-                            <a class="github_name me-auto" href="https://github.com/${myGithubInfo['login']}">${myGithubInfo['username']}</a>
-                    <span class="github_commits">${myGithubInfo['commits']}</span>
-                `
-                } else {
-                    document.querySelector('div.commit_rank_content').innerHTML = `
-                    <div class="commit_rank_text">
-                        <span>&#009888; Something Wrong</span>
-                    </div>`
-                }
-            })
-        }).catch(function (_) {
-            // console.warn('Something went wrong.', err);
-            document.querySelector('div.commit_rank_content').innerHTML = `
-                    <div class="commit_rank_text">
-                        <span>&#009888; Failed</span>
-                    </div>`
-        });
-    })
+        autoedTracker(groupContent);
+        githubRank();
+    });
 </script>
 </body>
 </html>
