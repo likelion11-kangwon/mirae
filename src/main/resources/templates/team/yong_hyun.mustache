@@ -227,8 +227,6 @@
                 </div>
             </div>
         </div>
-
-
         <div class="activity_card_group">
             <div class="activity_card">
                 <i class="fa fa-refresh activity_image_refresh" aria-hidden="true" onclick="travelImageUpdate()"></i>
@@ -294,7 +292,39 @@
     </div>
 </section>
 <section id="contact" class="contact_section">
-    <div></div>
+    <div class="modal fade" id="discordModal" tabindex="-1" aria-labelledby="discordModalLabel" aria-hidden="true" data-bs-theme="dark">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="discordModalLabel">디스코드 ID</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span>건유1019#0001</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>언제든지 부르면 달려갑니다!</h2>
+    <span class="contact_description">심심하거든요 ㅎㅎ;;;</span>
+    <div class="container contact_group">
+        <a href="https://yhs.kr" class="contact_title">
+            <i class="fas fa-globe"></i>
+            <span>Website</span>
+        </a>
+        <a href="https://github.com/gunyu1019" class="contact_title">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+        </a>
+        <a class="contact_title" data-bs-toggle="modal" data-bs-target="#discordModal">
+            <i class="fab fa-discord"></i>
+            <span>Discord</span>
+        </a>
+        <a class="contact_title" href="https://instagram.com/yonghyun1019">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <span>Instagram</span>
+        </a>
+    </div>
 </section>
 <script type="application/javascript">
     let groupContent = document.querySelector('div.image_group').innerHTML
@@ -304,6 +334,7 @@
     window.addEventListener("DOMContentLoaded", function () {
         const emojiList = ["&#127857;", "&#127834;", "&#127837;", "&#127844;", "&#129374;", "&#127846;"]
         document.querySelector("div#activity_emoji_icon").innerHTML = randomChoice(emojiList)
+
         travelImageUpdate();
         gameImageUpdate();
         autoedTracker(groupContent);

@@ -566,7 +566,108 @@ h5.modal-title {
     font-weight: bold;
 }
 
-div.modal-body ul li {
+div.modal-body ul li,
+div.modal-body span {
     font-family: NotoSansKR-Regular, "Noto Sans KR", sans-serif;
     font-size: 16px;
+}
+
+section.contact_section {
+    padding: 20vh 0;
+}
+
+section.contact_section div.contact_group {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    padding: 20px 0 0 0;
+}
+
+section.contact_section h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+section.contact_section span.contact_description {
+    display: block;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+section.contact_section div.contact_group a.contact_title {
+    align-items: center;
+    border: 2px white solid;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 white;
+    color: white;
+    display: flex;
+    font-size: 32px;
+    padding: 30px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: ease-out 0.5s;
+    justify-content: center;
+}
+
+section.contact_section div.contact_group a.contact_title:hover {
+    color: black;
+    cursor: pointer;
+    box-shadow: inset 0 -60px 0 0 white;
+    text-decoration: none;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(1) {
+    color: #8080ff;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(2) {
+    color: #181717;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(3) {
+    color: #5865F2;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(4) {
+    color: #E4405F;
+}
+
+@media screen and (max-width: 500px){
+    section.contact_section div.contact_group a.contact_title {
+        width: 200px;
+    }
+
+    section.contact_section div.contact_group a.contact_title span {
+        display: block;
+        font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+        font-size: 16px;
+        padding: 0 0 0 6px;
+        text-align: center;
+    }
+
+    section.contact_section div.contact_group {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 500px){
+    section.contact_section div.contact_group a.contact_title {
+        width: 50px;
+    }
+
+    section.contact_section div.contact_group a.contact_title span {
+        display: none;
+    }
+
+    section.contact_section div.contact_group {
+        flex-direction: row;
+        gap: 20px;
+    }
 }
