@@ -493,3 +493,13 @@ section.activities_section div.activities_group div.activity_card h2 {
 section.activities_section div.activities_group div.activity_card .activity_emoji_icon {
     display: contents;
 }
+
+section.activities_section div.activities_group div.activity_card .activity_image_refresh {
+    position: absolute;
+    margin: 12px;
+    color: white;
+}
+
+section.activities_section div.activities_group div.activity_card .activity_image_refresh:hover {
+    color: #8080ff;
+}

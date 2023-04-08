@@ -234,6 +234,7 @@
         <span>저는 코딩 이외에도 다양한 활동을 좋아합니다.</span>
         <div class="activity_card_group">
             <div class="activity_card">
+                <i class="fa fa-refresh activity_image_refresh" aria-hidden="true" onclick="travelImageUpdate()"></i>
                 <img src="/static/img/yong_hyun/travel/Plane.jpg" id="activity_image_1"/>
                 <div class="activity_card_body">
                     <h2>집 밖이 최고야!</h2>
@@ -267,6 +268,7 @@
                 </div>
             </div>
             <div class="activity_card">
+                <i class="fa fa-refresh activity_image_refresh" aria-hidden="true" onclick="gameImageUpdate()"></i>
                 <img src="/static/img/yong_hyun/game/Spider_Man.jpg" id="activity_image_2"/>
                 <div class="activity_card_body">
                     <h2>게임은 하나의 쿨링 수단이다</h2>
@@ -292,6 +294,14 @@
 
     function randomChoice(data) {
         return data[Math.floor(Math.random() * data.length)];
+    }
+
+    function travelImageUpdate() {
+        document.querySelector("img#activity_image_1").src = `/static/img/yong_hyun/travel/${randomChoice(travelImageFileNameList)}`
+    }
+
+    function gameImageUpdate() {
+        document.querySelector("img#activity_image_2").src = `/static/img/yong_hyun/game/${randomChoice(gameImageFileNameList)}`
     }
 
     const gameImageFileNameList = [
@@ -344,8 +354,8 @@
     window.addEventListener("DOMContentLoaded", function () {
         const emojiList = ["&#127857;", "&#127834;", "&#127837;", "&#127844;", "&#129374;", "&#127846;"]
         document.querySelector("div#activity_emoji_icon").innerHTML = randomChoice(emojiList)
-        document.querySelector("img#activity_image_1").src = `/static/img/yong_hyun/travel/${randomChoice(travelImageFileNameList)}`
-        document.querySelector("img#activity_image_2").src = `/static/img/yong_hyun/game/${randomChoice(gameImageFileNameList)}`
+        travelImageUpdate();
+        gameImageUpdate();
 
         fetch('/mirae/api/commit_rank').then(function (response) {
             // console.log('success!', response);
