@@ -17,11 +17,11 @@
     <script src="https://kit.fontawesome.com/afc467762e.js" crossorigin="anonymous"></script>
 
     <!-- Personal Javascript -->
-    <script src="/static/javascript/autoscroll.js"></script>
-    <script src="/static/javascript/autoTracker.js"></script>
-    <script src="/static/javascript/firework.js"></script>
-    <script src="/static/javascript/githubRank.js"></script>
-    <script src="/static/javascript/imageUpdate.js"></script>
+    <script src="/static/js/autoscroll.js"></script>
+    <script src="/static/js/autoTrackker.js"></script>
+    <script src="/static/js/firework.js"></script>
+    <script src="/static/js/githubRank.js"></script>
+    <script src="/static/js/imageUpdate.js"></script>
 
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -329,7 +329,7 @@
 <script type="application/javascript">
     let groupContent = document.querySelector('div.image_group').innerHTML
     window.addEventListener("resize", function () {
-        autoedTracker(groupContent)
+        autoedTrack(groupContent)
     })
     window.addEventListener("DOMContentLoaded", function () {
         const emojiList = ["&#127857;", "&#127834;", "&#127837;", "&#127844;", "&#129374;", "&#127846;"]
@@ -337,7 +337,7 @@
 
         travelImageUpdate();
         gameImageUpdate();
-        autoedTracker(groupContent);
+        autoedTrack(groupContent);
         githubRank();
     });
 </script>
