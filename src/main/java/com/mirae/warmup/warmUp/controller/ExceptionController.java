@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ExceptionController {
     @GetMapping("")
     public String duplicateLogin(){
-        return "index";
+        return "redirect:/mirae/home";
     }
 
     @GetMapping("error403")

@@ -2,8 +2,6 @@ package com.mirae.warmup.warmUp.controller;
 
 import com.mirae.warmup.warmUp.config.auth.PrincipalDetails;
 import com.mirae.warmup.warmUp.dto.UserDto;
-import com.mirae.warmup.warmUp.entity.User;
-import com.mirae.warmup.warmUp.repository.UserRepository;
 import com.mirae.warmup.warmUp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -22,9 +20,6 @@ public class MainController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
     @GetMapping({"home", ""})
     public String home(@AuthenticationPrincipal PrincipalDetails principalDetails, Model model) {
         model.addAttribute("login", principalDetails == null);
@@ -32,10 +27,23 @@ public class MainController {
     }
 
     @GetMapping("/user/yoonsoo")
-    public @ResponseBody String yoonsoo(@AuthenticationPrincipal PrincipalDetails principalDetails){
+    public String yoonsoo(@AuthenticationPrincipal PrincipalDetails principalDetails){
         System.out.println("principalDetails: " + principalDetails);
         return "yoonsoo";
     }
+
+    @GetMapping("/user/chanwoo")
+    public String chanwoo(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        System.out.println("principalDetails: " + principalDetails);
+        return "chanwoo";
+    }
+
+    @GetMapping("/user/yonghyun")
+    public String yonghyun(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        System.out.println("principalDetails: " + principalDetails);
+        return "yonghyun";
+    }
+
 
     @GetMapping("/admin")
     public @ResponseBody String admin(){
