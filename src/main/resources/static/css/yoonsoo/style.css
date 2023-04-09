@@ -1,0 +1,767 @@
+@font-face {
+    font-family: 'MYHaemalgeunSangsang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYHaemalgeunSangsang.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "MYHaemalgeunSangsang";
+}
+
+body {
+    background-color: #eff2f8;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+}
+
+.item {
+    scroll-snap-align: center;
+}
+
+/* 상단바 */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #F4B183;
+    color: white;
+    font-size: 36px;
+    z-index: 10;
+    text-align: center;
+}
+
+nav {
+    display: inline-block;
+    width: 100%;
+
+}
+
+nav img {
+    height: 5vh;
+    display: inline-block;
+    left: 0;
+}
+
+.nav-list {
+    display: inline-block;
+}
+
+.list-link {
+    margin-left: 70px;
+}
+
+.list-link:hover {
+    color: rgb(255, 242, 204);
+    border-bottom: 2px solid rgb(255, 242, 204);
+}
+
+.li-list {
+    display: inline-block;
+}
+
+@media(max-width: 1160px){
+    .list-link{
+        font-size: 25px;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+    .li-list{
+        padding: 0px;
+    }
+}
+
+.bar-bg {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(244, 177, 131);
+}
+
+.bar-ing {
+    position: absolute;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+}
+
+
+.cont-start {
+    display: flex;
+    justify-content: center;
+    background-color: #FFF2CC;
+}
+
+.cont_text {
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    display: block;
+    border: 4px double black;
+    border-width: 4px 0;
+    padding: 1.5% 0%;
+    top: 18%;
+    left: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mainText {
+    font-size: 40px;
+}
+
+.effectText {
+    font: 700 4em/1 "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, .5);
+
+    /* Clip Background Image */
+
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+
+}
+
+@-webkit-keyframes aitf {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.cont-profile {
+    display: block;
+    /* flex-direction: column; */
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    margin-top: 10%;
+}
+
+@media(max-width: 1160px){
+    .cont-profile{
+        margin-top: 86px;
+    }
+
+    .cont_text{
+        width: 80vw;
+    }
+}
+.box {
+    width: 50vh;
+    height: 50vh;
+    margin: 5% auto;
+    border-radius: 70%;
+    overflow: hidden;
+
+}
+
+.profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* aboutMe 섹션 */
+.section-about {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(223, 166, 123);
+    margin: auto;
+}
+
+.section-about h2 {
+    margin: 0 auto 100px;
+    display: inline-block;
+    color: black;
+    font-size: 80px;
+}
+
+.cont-about {
+    display: flex;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.slide-container {
+    width: 438px;
+    margin: 0 auto;
+}
+
+.slide-album {
+    position: relative;
+    width: 438px;
+    height: 438px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.slide-images {
+    position: relative;
+    display: flex;
+    height: 438px;
+}
+
+.slide-images img {
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width: 1160px){
+    .slide-container{
+        width: 50vw;
+        margin: 0 auto;
+    }
+
+    .slide-album{
+        position: relative;
+        width: 50vw;
+        height: 50vw;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .slide-images {
+        position: relative;
+        display: flex;
+        height: 50vw;
+    }
+
+    .slide-images img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cont-about{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        height: 100vh;
+    }
+
+    .section-about{
+        padding-bottom: 40vh;
+    }
+}
+
+.btn-next,
+.btn-next:active,
+.btn-next:focus {
+    position: absolute;
+    padding: 8px 8px 7px 14px;
+    background-color: #F5EBEB;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 100%;
+
+}
+
+.btn-prev,
+.btn-prev:active,
+.btn-prev:focus {
+    position: absolute;
+    padding: 8px 14px 7px 8px;
+    background-color: #F5EBEB;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 100%;
+
+}
+
+.btn-next:disabled,
+.btn-prev:disabled {
+    background-color: lightgray;
+}
+
+.btn-next:hover,
+.btn-prev:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #7149C6;
+    transition: 0.7s ease-out;
+}
+
+.btn-prev {
+    left: 18px;
+    top: 50%;
+}
+
+.btn-next {
+    right: 18px;
+    top: 50%;
+}
+
+.info-about {
+    margin: 0 0 0 60px;
+}
+
+.txt-about dt {
+    display: inline-block;
+    margin-bottom: 17px;
+    width: 110px;
+    font-size: 30px;
+    color: black;
+}
+
+.txt-about {
+    margin-top: 55px;
+}
+
+.txt-about dd {
+    display: inline-block;
+    font-size: 30px;
+    color: white;
+    font-family: "Dovemayo_gothic";
+}
+
+.btn-about {
+    margin: 45px 0 0 20px;
+}
+
+.btn-about button {
+    width: 140px;
+    height: 140px;
+    margin: 0 45px 0 0;
+    border-radius: 100%;
+    background-color: rgb(255, 242, 204);
+    border: none;
+    color: black;
+    font-size: 18px;
+}
+
+.btn-about button:hover {
+    cursor: pointer;
+    background-color: #c4c8f1;
+    color: #868ecf;
+    transition: 0.5s ease-out;
+}
+
+.btn-about button img {
+    width: 43px;
+    margin: 10px auto;
+}
+
+.btn-open {
+    font-size: 100px;
+}
+
+@media(max-width: 1160px){
+    .btn-about button{
+        width: 25vw;
+        height: 25vw;
+        margin: 0 10px 0 0;
+        border-radius: 100%;
+        background-color: rgb(255, 242, 204);
+        border: none;
+        color: black;
+        font-size: 18px;
+    }
+}
+/* Skills */
+
+.section-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFF2CC;
+}
+
+.section-skills h2 {
+    margin: 0 auto;
+    display: inline-block;
+    color: black;
+    font-size: 80px;
+    margin-bottom: 40px;
+    margin-top: 10%;
+}
+
+.cont-skills {
+    display: inline-block;
+    height: 60vh;
+    text-align: center;
+    margin-top: 5%;
+}
+
+
+.cont-skills button {
+    width: 140px;
+    height: 140px;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 100%;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+
+.cont-skills button:hover {
+    cursor: pointer;
+    background-color: #c4c8f1;
+    color: #868ecf;
+    transition: 0.5s ease-out;
+}
+
+.cont-skills button img {
+    width: 43px;
+    margin: 10px auto;
+}
+
+@media(max-width: 1160px){
+    .cont-skills button{
+        width: 140px;
+        height: 140px;
+        margin-left: 5%;
+        margin-left: 5%;
+        border-radius: 100%;
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    .cont-skills {
+        display: block;
+        /* justify-content: center; */
+        height: 60vh;
+        /* vertical-align: middle; */
+    }
+}
+
+.btn-open-skills {
+    font-size: 100px;
+}
+
+/* project섹션 */
+.section-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(223, 166, 123);
+}
+
+.section-project h2 {
+    margin: 0 auto;
+    display: inline-block;
+    color: black;
+    font-size: 80px;
+    margin-bottom: 40px;
+    margin-top: 10%;
+}
+
+.box-project {
+    margin: 30px auto;
+    display: flex;
+    padding: 35px;
+    width: 75vw;
+    border-radius: 20px;
+    background-color: rgb(255, 217, 102);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.box-project-left{
+    display: block;
+    width: 50%;
+}
+
+.img-project {
+    border-radius: 15px;
+    width: 100%;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.btn-detail {
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    background-color: #FFF2CC;
+    border: solid 2px black;
+    color: #413543;
+    font-size: 20px;
+}
+
+.btn-detail:hover {
+    background-color: white;
+    border: solid 2px #6a75ca;
+    color: #6a75ca;
+}
+
+.txt-project {
+    text-align: left;
+    font-family: "Dovemayo_gothic";
+    margin: 25px 0 0 40px;
+    display: block;
+    width: 50%;
+}
+
+@media(max-width: 1160px){
+    .box-project{
+        flex-direction: column;
+    }
+    .box-project-left{
+        width: 100%;
+        height: 50%;
+    }
+
+    .txt-project{
+        width: 100%;
+        height: 50%;
+        margin: 0;
+        margin-top: 7%;
+    }
+}
+.txt-project h3 {
+    font-size: 34px;
+    line-height: 35px;
+    margin-bottom: 30px;
+
+}
+
+.txt-project dl dt {
+    color: #609966;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.txt-project dl dd {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: black;
+}
+
+/* footer */
+#footer {
+    text-align: center;
+}
+
+#footer h2 {
+    color: black;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.box-footer {
+    width: 100%;
+    background-color: white;
+    padding: 80px 0 70px 0;
+}
+
+.link-sns ul {
+    display: inline-block;
+    margin: 30px auto;
+}
+
+.link-sns li {
+    display: inline-block;
+    padding: 35px;
+    font-size: 12px;
+}
+
+.link-sns li a img {
+    margin-bottom: 10px;
+}
+
+.img-github,
+.img-notion {
+    width: 65px;
+}
+
+.box-footer p {
+    color: black;
+    margin-top: 50px;
+}
+
+/* 모달 */
+.modal-background {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.modal {
+    position: absolute;
+    top: 10%;
+    width: 440px;
+    height: 80vh;
+    overflow-y: auto;
+    background-color: #e0e3fd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal h3 {
+    margin: 40px 0 7px 0;
+    font-size: 25px;
+    color: #6a75ca;
+    font-family: "GmarketBold";
+}
+
+.modal h4 {
+    font-size: 20px;
+}
+
+.modal img {
+    width: 350px;
+    margin: 30px auto;
+    border-radius: 15px;
+}
+
+.modal p {
+    margin: 0 auto;
+    width: 310px;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "Dovemayo_gothic";
+}
+
+.modal-background-skills {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.modal-skills {
+    position: absolute;
+    top: 10%;
+    width: 440px;
+    height: 80vh;
+    overflow-y: auto;
+    background-color: #e0e3fd;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal-skills h3 {
+    margin: 40px 0 7px 0;
+    font-size: 25px;
+    color: #6a75ca;
+    font-family: "GmarketBold";
+}
+
+.modal-skills h4 {
+    font-size: 20px;
+}
+
+.modal-skills img {
+    width: 350px;
+    margin: 30px auto;
+    border-radius: 15px;
+}
+
+.modal-skills p {
+    margin: 0 auto;
+    width: 310px;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "Dovemayo_gothic";
+}
+
+.btn-close {
+    padding: 8px 140px;
+    margin: 25px 0 35px 0;
+    background-color: #6a75ca;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+.btn-close:hover {
+    background-color: white;
+    color: #6a75ca;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.btn-close-skills {
+    padding: 8px 140px;
+    margin: 25px 0 35px 0;
+    background-color: #6a75ca;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+.btn-close-skills:hover {
+    background-color: white;
+    color: #6a75ca;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.btn-moveTop {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+    width: 65px;
+    height: 65px;
+    background-image: url(/static/img/yoonsoo/btn-moveTop.png);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-moveTop:hover {
+    background-image: url(/static/img/yoonsoo/btn-moveTop-hover.png);
+    transition: 0.5s ease-out;
+}
