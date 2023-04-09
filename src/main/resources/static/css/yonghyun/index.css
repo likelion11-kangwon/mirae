@@ -1,21 +1,21 @@
 @font-face{
     font-family: "Jalnan";
-    src: url("../fonts/Jalnan.ttf");
+    src: url("../../fonts/Jalnan.ttf");
 }
 
 @font-face{
     font-family: "NotoSansKR-Bold";
-    src: url("../fonts/NotoSansKR/NotoSansKR-Bold.otf");
+    src: url("../../fonts/NotoSansKR/NotoSansKR-Bold.otf");
 }
 
 @font-face{
     font-family: "NotoSansKR-Medium";
-    src: url("../fonts/NotoSansKR/NotoSansKR-Medium.otf");
+    src: url("../../fonts/NotoSansKR/NotoSansKR-Medium.otf");
 }
 
 @font-face{
     font-family: "NotoSansKR-Regular";
-    src: url("../fonts/NotoSansKR/NotoSansKR-Regular.otf");
+    src: url("../../fonts/NotoSansKR/NotoSansKR-Regular.otf");
 }
 
 body {
