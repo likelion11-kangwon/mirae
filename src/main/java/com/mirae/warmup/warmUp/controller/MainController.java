@@ -26,25 +26,6 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/user/yoonsoo")
-    public String yoonsoo(@AuthenticationPrincipal PrincipalDetails principalDetails){
-        System.out.println("principalDetails: " + principalDetails);
-        return "yoonsoo";
-    }
-
-    @GetMapping("/user/chanwoo")
-    public String chanwoo(@AuthenticationPrincipal PrincipalDetails principalDetails){
-        System.out.println("principalDetails: " + principalDetails);
-        return "chanwoo";
-    }
-
-    @GetMapping("/user/yonghyun")
-    public String yonghyun(@AuthenticationPrincipal PrincipalDetails principalDetails){
-        System.out.println("principalDetails: " + principalDetails);
-        return "yonghyun";
-    }
-
-
     @GetMapping("/admin")
     public @ResponseBody String admin(){
         return "admin";
@@ -76,5 +57,4 @@ public class MainController {
 
         return "redirect:/mirae/loginForm";
     }
-
 }
