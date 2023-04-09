@@ -1,0 +1,673 @@
+@font-face{
+    font-family: "Jalnan";
+    src: url("../fonts/Jalnan.ttf");
+}
+
+@font-face{
+    font-family: "NotoSansKR-Bold";
+    src: url("../fonts/NotoSansKR/NotoSansKR-Bold.otf");
+}
+
+@font-face{
+    font-family: "NotoSansKR-Medium";
+    src: url("../fonts/NotoSansKR/NotoSansKR-Medium.otf");
+}
+
+@font-face{
+    font-family: "NotoSansKR-Regular";
+    src: url("../fonts/NotoSansKR/NotoSansKR-Regular.otf");
+}
+
+body {
+    background: #1e2125;
+    color: white;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #eeeeee;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: rgba(0,0,0,0);
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section.main_section {
+    width: 100vw;
+    height: 100vh;
+}
+
+section.main_section div.main_group {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    place-items: center;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center
+}
+
+section.main_section div.main_group span.main_title {
+    font-size: 40px;
+    font-weight: 1000;
+    font-family: Jalnan, "Jalnan", sans-serif;
+}
+
+span.main_title_emphasis {
+    background: linear-gradient(45deg, #ff8080, #8080ff);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow_title 3s forwards;
+}
+
+@keyframes rainbow_title {
+    0% { background-position: 0 100%; }
+    100% { background-position: 100% 0; }
+}
+
+@keyframes firework {
+    0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
+    50% { width: 0.5vmin; opacity: 1; }
+    100% { width: var(--finalSize); opacity: 0; }
+}
+
+section.main_section div.firework {
+    display: none;
+}
+
+section.main_section div.firework,
+section.main_section div.firework::before,
+section.main_section div.firework::after {
+    --initialSize: 0.5vmin;
+    --finalSize: 45vmin;
+    --particleSize: 0.2vmin;
+    --color1: yellow;
+    --color2: khaki;
+    --color3: white;
+    --color4: lime;
+    --color5: gold;
+    --color6: mediumseagreen;
+    --y: -30vmin;
+    --x: -50%;
+    --initialY: 60vmin;
+    content: "";
+    animation: firework 3s infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, var(--y));
+    width: var(--initialSize);
+    aspect-ratio: 1;
+    background:
+        /*
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,
+        */
+
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+
+                /* bottom right */
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+
+                /* bottom left */
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+
+                /* top left */
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+            radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+            radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+            radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+
+                /* top right */
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%
+;
+    background-size: var(--initialSize) var(--initialSize);
+    background-repeat: no-repeat;
+}
+
+section.main_section div.firework::before {
+    --x: -50%;
+    --y: -50%;
+    --initialY: -50%;
+    /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
+    transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+    /*   animation: fireworkPseudo 2s infinite; */
+}
+
+section.main_section div.firework::after {
+    --x: -50%;
+    --y: -50%;
+    --initialY: -50%;
+    /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
+    transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+    /*   animation: fireworkPseudo 2s infinite; */
+}
+
+section.main_section div.firework:nth-child(2) {
+    --x: 30vmin;
+}
+
+section.main_section div.firework:nth-child(2),
+section.main_section div.firework:nth-child(2)::before,
+section.main_section div.firework:nth-child(2)::after {
+    --color1: pink;
+    --color2: violet;
+    --color3: fuchsia;
+    --color4: orchid;
+    --color5: plum;
+    --color6: lavender;
+    --finalSize: 40vmin;
+    left: 30%;
+    top: 60%;
+    animation-delay: -0.25s;
+}
+
+section.main_section div.firework:nth-child(3) {
+    --x: -30vmin;
+    --y: -50vmin;
+}
+
+section.main_section div.firework:nth-child(3),
+section.main_section div.firework:nth-child(3)::before,
+section.main_section div.firework:nth-child(3)::after {
+    --color1: cyan;
+    --color2: lightcyan;
+    --color3: lightblue;
+    --color4: PaleTurquoise;
+    --color5: SkyBlue;
+    --color6: lavender;
+    --finalSize: 35vmin;
+    left: 70%;
+    top: 60%;
+    animation-delay: -0.4s;
+}
+
+section.main_section div.commit_rank_group {
+    background: #262b2f;
+    border-radius: 20px;
+    width: 400px;
+    margin: 30px 0;
+    padding: 15px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+#spinnerIndicator {
+    width: 30px;
+    height: 30px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    border-top-color: white;
+    border-radius: 100%;
+
+    animation: spinnerIndicatorAnimation 1s ease-in-out infinite;
+}
+
+@keyframes spinnerIndicatorAnimation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+section.main_section div.commit_rank_group div.commit_rank_content {
+    width: 90%;
+    min-height: 250px;
+}
+
+section.main_section div.commit_rank_group div.commit_rank_content div.commit_rank_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 250px;
+}
+
+section.main_section div.commit_rank_group div.commit_rank_content div.commit_rank_text span {
+    padding: 0 0 0 6px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+section.main_section div.commit_rank_group span.commit_rank_description {
+    color: #8a8a8a;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    padding: 0 0 10px 0;
+    display: block;
+}
+
+section.main_section div.commit_rank_group div.github_content_group {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+section.main_section div.commit_rank_group div.github_content_group img {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+section.main_section div.commit_rank_group div.github_content_group a.github_name {
+    padding: 0 0 0 10px;
+    font-size: 20px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+section.main_section div.commit_rank_group div.github_content_group a.github_name:hover {
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+section.main_section div.commit_rank_group div.github_content_group span.github_commits {
+    font-size: 16px;
+    color: gray;
+}
+
+section.main_section div.commit_rank_group div.github_content_group span.github_rank {
+    font-size: 30px;
+    color: gray;
+}
+
+section.introduce_section {
+    background: #373b3e;
+    min-height: 60vh;
+}
+
+section.introduce_section div.introduce_group span.introduce_description {
+    display: inline-block;
+    font-size: 16px;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+}
+
+section.introduce_section div.introduce_group h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+}
+
+section.introduce_section div.introduce_group {
+    padding: calc((60vh - 203px) / 2) 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.introduce_section div.introduce_group img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+@media screen and (max-width: 1050px) {
+    section.introduce_section div.introduce_group img {
+        display: none;
+    }
+}
+
+section.programing_section {
+    min-height: 60vh;
+}
+
+section.programing_section div.programing_group {
+    padding: calc((60vh - 203px) / 2) 0;
+    text-align: center;
+}
+
+section.programing_section div.programing_group h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+section.programing_section div.programing_group span {
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+
+section.programing_section div.programing_group div.image_group {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+section.programing_section div.programing_group div.image_group img.background {
+    background: white;
+    padding: 15px;
+}
+section.programing_section div.programing_group div.image_group img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: 0 10px;
+    animation: image_index 20s infinite linear;
+}
+
+
+@keyframes image_index {
+    0% { transform: translate(0%, 0) }
+    100% { transform: translate(calc((-170px * 14)), 0) }
+}
+
+section.programing_section div.programing_group div.group_field div.item_field h3 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field span {
+    display: block;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    padding: 0 0 5px 0;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field h5 {
+    font-weight: bold;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    padding: 5px 0 0 0;
+}
+
+section.programing_section div.programing_group div.group_field {
+    text-align: start;
+}
+
+@media screen and (min-width: 1000px) {
+    section.programing_section div.programing_group div.group_field {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section.programing_section div.programing_group div.group_field div.item_field {
+        padding: 0 0 10px 0;
+    }
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li {
+    color: white;
+    font-size: 18px;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    padding: 3px 0;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    border-radius: 10px;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section.programing_section div.programing_group div.group_field div.item_field ul li a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+section.activities_section div.activities_group h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-weight: bold;
+}
+
+section.activities_section div.activities_group span {
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+    section.activities_section div.activities_group div.activity_card_group {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    section.activities_section div.activities_group div.activity_card_group {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}
+
+section.activities_section div.activities_group div.activity_card_group {
+    display: flex;
+    gap: 30px;
+    padding: 50px 0 50px 0;
+}
+
+section.activities_section div.activities_group div.activity_card {
+    background: #373b3e;
+    border-radius: 30px;
+}
+
+section.activities_section div.activities_group div.activity_card {
+    background: #373b3e;
+    border-radius: 30px;
+    width: 100%;
+}
+
+section.activities_section div.activities_group div.activity_card img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+section.activities_section div.activities_group span {
+    display: block;
+}
+
+section.activities_section div.activities_group div.activity_card span {
+    display: block;
+    padding: 0 0 6px 0;
+}
+
+section.activities_section div.activities_group div.activity_card span,
+section.activities_section div.activities_group div.activity_card ul li {
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+
+section.activities_section div.activities_group div.activity_card div.activity_card_body {
+    padding: 16px;
+}
+
+section.activities_section div.activities_group div.activity_card h2 {
+    padding: 0 0 10px 0;
+    font-weight: 800;
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-size: 30px;
+}
+
+section.activities_section div.activities_group div.activity_card .activity_emoji_icon {
+    display: contents;
+}
+
+section.activities_section div.activities_group div.activity_card .activity_image_refresh {
+    position: absolute;
+    margin: 12px;
+    color: white;
+}
+
+section.activities_section div.activities_group div.activity_card .activity_image_refresh:hover {
+    color: #8080ff;
+}
+
+section.activities_section div.activities_group div.activity_card button.activity_button {
+    background: #606060;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+section.activities_section div.activities_group div.activity_card button.activity_button:hover {
+    background: #505050;
+}
+
+h5.modal-title {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    font-weight: bold;
+}
+
+div.modal-body ul li,
+div.modal-body span {
+    font-family: NotoSansKR-Regular, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+}
+
+section.contact_section {
+    padding: 20vh 0;
+}
+
+section.contact_section div.contact_group {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    padding: 20px 0 0 0;
+}
+
+section.contact_section h2 {
+    font-family: NotoSansKR-Bold, "Noto Sans KR", sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+section.contact_section span.contact_description {
+    display: block;
+    font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+section.contact_section div.contact_group a.contact_title {
+    align-items: center;
+    border: 2px white solid;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 white;
+    color: white;
+    display: flex;
+    font-size: 32px;
+    padding: 30px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: ease-out 0.5s;
+    justify-content: center;
+}
+
+section.contact_section div.contact_group a.contact_title:hover {
+    color: black;
+    cursor: pointer;
+    box-shadow: inset 0 -60px 0 0 white;
+    text-decoration: none;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(1) {
+    color: #8080ff;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(2) {
+    color: #181717;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(3) {
+    color: #5865F2;
+}
+
+section.contact_section div.contact_group a.contact_title:hover:nth-child(4) {
+    color: #E4405F;
+}
+
+@media screen and (max-width: 500px){
+    section.contact_section div.contact_group a.contact_title {
+        width: 200px;
+    }
+
+    section.contact_section div.contact_group a.contact_title span {
+        display: block;
+        font-family: NotoSansKR-Medium, "Noto Sans KR", sans-serif;
+        font-size: 16px;
+        padding: 0 0 0 6px;
+        text-align: center;
+    }
+
+    section.contact_section div.contact_group {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 500px){
+    section.contact_section div.contact_group a.contact_title {
+        width: 50px;
+    }
+
+    section.contact_section div.contact_group a.contact_title span {
+        display: none;
+    }
+
+    section.contact_section div.contact_group {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
