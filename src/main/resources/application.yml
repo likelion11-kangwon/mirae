@@ -11,8 +11,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mirae?serverTimezone=Asia/Seoul
-    username: mirae
-    password: mirae1234
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -33,24 +33,27 @@ spring:
     show-sql: true
 
   security:
+#    security:
+#      github:
+#        token:
     oauth2:
       client:
         registration:
           google:
-            client-id: 251592516648-067uamvtrqirvuovgken2hl2qdlnv4vg.apps.googleusercontent.com
-            client-secret: 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
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
             scope:
               - email
               - profile
           facebook:
-            client-id: 877259743322267
-            client-secret: c4b8679102dfa662aeb89bcfdd346331
+            client-id: ${FACEBOOK_CLIENT_ID}
+            client-secret: ${FACEBOOK_CLIENT_SECRET}
             scope:
               - email
               - public_profile
           naver:
-            client_id: bDRtfMX2vo0axdEZiWZm
-            client-secret: LIpnqqxjij
+            client_id: ${NAVER_CLIENT_ID}
+            client-secret: ${NAVER_CLIENT_SECRET}
             scope:
               - name
               - email
