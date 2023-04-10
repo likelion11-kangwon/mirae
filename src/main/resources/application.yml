@@ -10,7 +10,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://yhs.kr:3306/mirae?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://yhs.kr/mirae?serverTimezone=Asia/Seoul
     username: ${MYSQL_USERNAME}
     password: ${MYSQL_PASSWORD}
   mvc:
@@ -59,7 +59,7 @@ spring:
               - email
             client-name: Naver
             authorization-grant-type: authorization_code
-            redirect-uri: http://mirae.yhs.kr:3306/login/oauth2/code/naver
+            redirect-uri: http://mirae.yhs.kr/login/oauth2/code/naver
         provider:
           naver:
             authorization-uri: https://nid.naver.com/oauth2.0/authorize
