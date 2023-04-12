@@ -127,7 +127,10 @@ function showCode() {
     setTimeout(function() {
         let arr = make_data();
         codebutton.style.display = "block";
-        codebutton.style.marginLeft = "830px";
+        codebutton.style.marginLeft = "auto";
+        codebutton.style.marginRight = "auto";
+        codebutton.style.marginBottom = "10px";
+
         codeDiv.innerHTML = "<span class='couple'> 내 이름은 " + arr[0] + "! </span>" +
             "<span class='couple'> 내 MBTI는 " + arr[2] + " 야</span>" +
             "<p class='couple'> 나는 " + arr[3][0] + arr[3][1] +"년생 "+ arr[3][2] + arr[3][3] +"월 "+ arr[3][4]+ arr[3][5] +"일생이고 " +
