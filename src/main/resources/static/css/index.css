@@ -160,7 +160,6 @@ div.index_footer a.button {
     font-weight: 500;
     font-size: 18px;
     padding: 6px 30px;
-    margin: 0 0 0 30px;
     text-decoration: none;
     transition: ease-out 0.3s;
 }
@@ -170,4 +169,25 @@ div.index_footer a.button:hover {
     color: #FFFFFF;
     background: #89AF3A;
     text-decoration: none;
+}
+
+@media screen and (max-width: 650px) {
+    div.index_footer {
+        flex-wrap: wrap;
+    }
+
+    div.index_footer span.login_description {
+        flex: 1 100%;
+        text-align: center;
+    }
+
+    div.index_footer a.button {
+        margin: 0 15px 0 15px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    div.index_footer a.button {
+        margin: 0 0 0 30px;
+    }
 }

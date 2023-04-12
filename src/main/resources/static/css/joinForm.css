@@ -1,0 +1,56 @@
+#wrap_box {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.register_h1 {
+    color: #7CA623;
+    font-weight: bold;
+}
+
+.register_h1 a{
+    color: #7CA623;
+    font-weight: bold;
+}
+
+.login_to_signup {
+    margin-left: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.register_button {
+    background-color: rgba(124,166,35, 0.65);
+    width: 150px;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    margin-bottom: 3%;
+}
+
+.register_wrap {
+    border: 1px solid gray;
+    border-radius: 20px 20px 20px 20px;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    margin-left: 34.5%;
+}
+
+.input_wrap {
+    width: 250px;
+    margin-left: 18.5%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+#pwd_message {
+    font-size: 15px;
+    color: #7CA623;
+}
+
+#password_isok {
+    font-size: 15px;
+    color: #7CA623;
+}
