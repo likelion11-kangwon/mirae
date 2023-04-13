@@ -358,7 +358,6 @@ section.programing_section {
 
 section.programing_section div.programing_group {
     padding: calc((60vh - 203px) / 2) 0;
-    text-align: center;
 }
 
 section.programing_section div.programing_group h2 {
@@ -366,6 +365,14 @@ section.programing_section div.programing_group h2 {
     width: 100%;
     font-weight: bold;
     text-align: center;
+}
+
+section.programing_section div.programing_group span.programing_description {
+    text-align: center;
+}
+
+section.programing_section div.programing_group div.modal span {
+    display: block;
 }
 
 section.programing_section div.programing_group span {
@@ -567,9 +574,19 @@ h5.modal-title {
 }
 
 div.modal-body ul li,
-div.modal-body span {
+div.modal-body span,
+div.modal-body a {
     font-family: NotoSansKR-Regular, "Noto Sans KR", sans-serif;
     font-size: 16px;
+}
+
+div.modal-body a {
+    color: white;
+    text-decoration: none;
+}
+
+div.modal-body a:hover {
+    color: white;
 }
 
 section.contact_section {

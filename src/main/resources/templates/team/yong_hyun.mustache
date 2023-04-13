@@ -85,8 +85,58 @@
 </section>
 <section id="programing" class="programing_section">
     <div class="programing_group">
+        <div class="modal fade" id="projectAuthorizationStudentModal" tabindex="-1" aria-labelledby="projectAuthorizationStudentModalLabel" aria-hidden="true" data-bs-theme="dark">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectAuthorizationStudentModalLabel">강원대학교 재학생인증 봇</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/static/img/yong_hyun/project_authorization_student.png" width="100%" style="border-radius: 20px; padding: 0 0 10px 0;">
+                        <span>Python와 SMTP를 활용하여 <a href="https://discord.gg/9RKznPFtFJ">강원대학교 프로그래밍 커뮤니티</a>의 재학생 인증을 도와주는 디스코드 봇을 개발하였습니다.</span>
+                        <span>커뮤니티 내에서 재학생 인증을 하고자 하는 사용자들이 빠르고 편리하게 인증할 수 있게 개발하였습니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="projectLibraryQR" tabindex="-1" aria-labelledby="projectLibraryQRLabel" aria-hidden="true" data-bs-theme="dark">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectLibraryQRLabel">강원대학교 도서관 위젯? 애플리케이션</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span>현재 개발 중인 강원대학교 도서관 위젯 애플리케이션입니다.</span>
+                        <span>Kotlin의 Jetpack Compose를 활용하여 안드로이드 계열 디바이스와 WearOS 기반의 웨어러블 디바이스에 지원할 계획입니다.</span>
+                        <span>강원대학교 도서관 애플리케이션은 용도에 비해 데이터 사용량이 심각하게 많다는 문제를 보완하고자, 필요한 기능만 뽑아내기 위해 개발하고 있습니다.</span>
+                        <span>1차 목표는 모바일 이용증을 직접 개발한 애플리케이션에서 사용하는 것을 목표로 개발하고 있습니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="projectMyKick" tabindex="-1" aria-labelledby="projectMyKickLabel" aria-hidden="true" data-bs-theme="dark">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectMyKickLabel">Project MyKick (Project MyMobility)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/static/img/yong_hyun/project_mykick.jpeg" width="100%" style="border-radius: 20px; padding: 0 0 10px 0;">
+                        <span>위 사진은 실제 어플리케이션으로 테스트를 진행해본 사진입니다.</span>
+                        <span>
+                            전국에 있는 다양한 공유킥보드의 위치를 한 번에 찾아볼 수 있는 프로젝트입니다.
+                            Kotlin의 Jetpack Compose를 활용하여 애플리케이션을 개발하고 있습니다.
+                        </span>
+                        <span>지금도 배포는 가능하나, 아직 배포를 진행하지 않은 상태입니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <h2>프로그래밍의 폭풍은 정말 최고야!~</h2>
-        <span>코딩의 폭풍은 정말 최고야! 지금도 다양한 프로그래밍을 경험해보고 싶어요.</span>
+        <span class="programing_description">코딩의 폭풍은 정말 최고야! 지금도 다양한 프로그래밍을 경험해보고 싶어요.</span>
         <div class="image_group">
             <a href="https://python.org">
                 <img src="/static/img/yong_hyun/icon/python.png" class="background"/>
@@ -151,7 +201,16 @@
                         </a>
                     </li>
                     <li>MyMetro (개발 예정)</li>
-                    <li>강원대학교 도서관 위젯 애플리케이션 (개발 중)</li>
+                    <li>
+                        <a data-bs-toggle="modal" data-bs-target="#projectMyKick">
+                            MyKick (배포 예정)
+                        </a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="modal" data-bs-target="#projectLibraryQR">
+                            강원대학교 도서관 위젯 애플리케이션 (개발 중)
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="item_field">
@@ -179,7 +238,16 @@
                             Craft Bot
                         </a>
                     </li>
-                    <li>강원대학교 재학생인증 봇</li>
+                    <li>
+                        <a data-bs-toggle="modal" data-bs-target="#projectAuthorizationStudentModal">
+                            강원대학교 재학생인증 봇
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/gunyu1019/discord-extension-interaction/tree/feature/client-independence">
+                            Discord Extension Interaction (상호작용 관련, 디스코드 봇 프레임워크)
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -295,7 +363,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <span>건유1019#0001</span>
+                    <span>건유1019#0001</span><br/>
+                    <span>저는 약간 디스코드에 현실 생활을 갈아넣은 것 같습니다..</span><br/>
+                    <span>아래 커뮤니티에서 활동 중이니 자주 놀러와 주세요!</span>
+                    <ul>
+                        <li><a href="https://discord.gg/9RKznPFtFJ"><u>Programing.KNU</u> (https://discord.gg/9RKznPFtFJ)</a></li>
+                        <li>디스코드 파트너 개발자 커뮤니티 (공개 예정)</li>
+                        <li>개인 프로젝트 지원 및 개발자 커뮤니티 (공개 예정)</li>
+                        <li>카카오톡봇 커뮤니티 (공개 예정, 활동도 잘안하는데 운영자가 되어있더라고요...?)</li>
+                        <li>이외 수 많은 개인 프로젝트 파트너 커뮤니티...</li>
+                    </ul>
                 </div>
             </div>
         </div>
