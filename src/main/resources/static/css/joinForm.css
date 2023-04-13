@@ -35,7 +35,7 @@
     justify-content: center;
     width: 400px;
     height: 600px;
-    margin-left: 34.5%;
+    margin: 0 auto;
 }
 
 .input_wrap {
