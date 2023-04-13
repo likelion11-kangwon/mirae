@@ -368,6 +368,7 @@ section.programing_section div.programing_group h2 {
 }
 
 section.programing_section div.programing_group span.programing_description {
+    display: block;
     text-align: center;
 }
 
