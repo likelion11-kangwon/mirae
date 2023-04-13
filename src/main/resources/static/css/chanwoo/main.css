@@ -16,6 +16,33 @@ body {
 }
 
 
+
+.nav_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(214, 214, 214, 0.5);
+}
+.nav_tag {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.nav_link {
+    text-decoration-line: none;
+    font-size: 25px;
+    color:rgb(70, 70, 70);
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.nav_link:hover {
+    transition: 0.3s;
+    color: rgb(63, 226, 172);
+}
+
 /* Window 1 */
 
 #window1 {
@@ -30,7 +57,7 @@ body {
 .profile_img {
     float: left;
     margin-left: 10%;
-    margin-top:  5%;
+    margin-top:  7%;
     width: 25%;
 
     border-radius: 20%;
