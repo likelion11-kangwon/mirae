@@ -27,12 +27,12 @@ public class MainController {
     }
 
     @GetMapping("/admin")
-    public @ResponseBody String admin(){
+    public String admin(){
         return "admin";
     }
 
     @GetMapping("/manager")
-    public @ResponseBody String manager(){
+    public String manager(){
         return "manager";
     }
 
